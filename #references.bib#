@@ -1,0 +1,23 @@
+@article{DERYCK2019conRe,
+title = {Automated guided vehicle systems, state-of-the-art control algorithms and techniques},
+journal = {Journal of Manufacturing Systems},
+volume = {54},
+pages = {152-173},
+year = {2020},
+issn = {0278-6125},
+doi = {https://doi.org/10.1016/j.jmsy.2019.12.002},
+url = {https://www.sciencedirect.com/science/article/pii/S0278612519301177},
+author = {M. {De Ryck} and M. Versteyhe and F. Debrouwere},
+keywords = {AGV-systems, State-of-the-art, Control Techniques, Centralized, Decentralized, Potential future techniques},
+abstract = {Automated guided vehicles (AGVs) form a large and important part of the logistic transport systems in today's industry. They are used on a large scale, especially in Europe, for over a decade. Current employed AGV systems and current systems offered by global manufacturers almost all operate under a form of centralized control: one central controller controls the whole fleet of AGVs. The authors do see a trend towards decentralized systems where AGVs make individual decisions favoring flexibility, robustness, and scalability of transportation. Promoted by the paradigm shift of Industry 4.0 and future requirements, more research is conducted towards the decentralization of AGV-systems in academia while global leading manufacturers start to take an active interest. That said, this implementation seems still in infancy. Currently, literature is dominated by central as well as by decentral control techniques and algorithms. For researchers in the field and for AGV developers, it is hard to find structure in the growing amount of algorithms for various types of applications. This paper is, to this purpose, meant to provide a good overview of all AGV-related control algorithms and techniques. Not only those that were used in the early stages of AGVs, but also the algorithms and techniques used in the most recent AGV-systems, as well as the algorithms and techniques with high potential.}
+}
+
+@article{yu2021model,
+  title={Model predictive control for autonomous ground vehicles: a review},
+  author={Yu, Shuyou and Hirche, Matthias and Huang, Yanjun and Chen, Hong and Allg{\"o}wer, Frank},
+  journal={Autonomous Intelligent Systems},
+  volume={1},
+  pages={1--17},
+  year={2021},
+  publisher={Springer}
+}

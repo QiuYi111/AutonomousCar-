@@ -1,0 +1,17 @@
+.\objects\agvconfig.o: AGVConfig.c
+.\objects\agvconfig.o: STM32Type.h
+.\objects\agvconfig.o: .\Libraries\CMSIS\stm32f10x.h
+.\objects\agvconfig.o: .\Libraries\CMSIS\core_cm3.h
+.\objects\agvconfig.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\agvconfig.o: .\Libraries\CMSIS\system_stm32f10x.h
+.\objects\agvconfig.o: .\Libraries\StdPeriph\inc\stm32f10x_conf.h
+.\objects\agvconfig.o: .\Libraries\StdPeriph\inc\stm32f10x_dma.h
+.\objects\agvconfig.o: .\Libraries\CMSIS\stm32f10x.h
+.\objects\agvconfig.o: .\Libraries\StdPeriph\inc\stm32f10x_exti.h
+.\objects\agvconfig.o: .\Libraries\StdPeriph\inc\stm32f10x_flash.h
+.\objects\agvconfig.o: .\Libraries\StdPeriph\inc\stm32f10x_gpio.h
+.\objects\agvconfig.o: .\Libraries\StdPeriph\inc\stm32f10x_rcc.h
+.\objects\agvconfig.o: .\Libraries\StdPeriph\inc\stm32f10x_usart.h
+.\objects\agvconfig.o: .\Libraries\StdPeriph\inc\misc.h
+.\objects\agvconfig.o: AGvConfig.h
+.\objects\agvconfig.o: AGVCP180112.h

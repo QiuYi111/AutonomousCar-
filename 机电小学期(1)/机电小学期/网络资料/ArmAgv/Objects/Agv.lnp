@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+".\objects\agvmain.o"
+".\objects\agvtimer.o"
+".\objects\stm32f10x_gpio.o"
+".\objects\core_cm3.o"
+".\objects\system_stm32f10x.o"
+".\objects\startup_stm32f10x_hd.o"
+".\objects\stm32f10x_tim.o"
+".\objects\stm32f10x_rcc.o"
+".\objects\misc.o"
+".\objects\agvuart1.o"
+".\objects\stm32f10x_usart.o"
+".\objects\agvcomm.o"
+".\objects\agvmotor.o"
+".\objects\agvbeepled.o"
+".\objects\agvxunji.o"
+".\objects\agvuart3.o"
+".\objects\agvconfig.o"
+".\objects\agvgenfun.o"
+--strict --scatter ".\Objects\Agv.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Agv.map" -o .\Objects\Agv.axf

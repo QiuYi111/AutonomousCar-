@@ -1,0 +1,17 @@
+.\objects\agvbeepled.o: AGVBeepLed.c
+.\objects\agvbeepled.o: .\Libraries\StdPeriph\inc\stm32f10x_gpio.h
+.\objects\agvbeepled.o: .\Libraries\CMSIS\stm32f10x.h
+.\objects\agvbeepled.o: .\Libraries\CMSIS\core_cm3.h
+.\objects\agvbeepled.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\agvbeepled.o: .\Libraries\CMSIS\system_stm32f10x.h
+.\objects\agvbeepled.o: .\Libraries\StdPeriph\inc\stm32f10x_conf.h
+.\objects\agvbeepled.o: .\Libraries\StdPeriph\inc\stm32f10x_dma.h
+.\objects\agvbeepled.o: .\Libraries\CMSIS\stm32f10x.h
+.\objects\agvbeepled.o: .\Libraries\StdPeriph\inc\stm32f10x_exti.h
+.\objects\agvbeepled.o: .\Libraries\StdPeriph\inc\stm32f10x_flash.h
+.\objects\agvbeepled.o: .\Libraries\StdPeriph\inc\stm32f10x_gpio.h
+.\objects\agvbeepled.o: .\Libraries\StdPeriph\inc\stm32f10x_rcc.h
+.\objects\agvbeepled.o: .\Libraries\StdPeriph\inc\stm32f10x_usart.h
+.\objects\agvbeepled.o: .\Libraries\StdPeriph\inc\misc.h
+.\objects\agvbeepled.o: STM32Type.h
+.\objects\agvbeepled.o: AGVBeepLed.h

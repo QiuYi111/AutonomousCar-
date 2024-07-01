@@ -1,0 +1,10 @@
+servo.c:10:6:servo1_init	16	static
+servo.c:16:6:servo1_turn	24	static
+servo.c:21:6:servo2_init	16	static
+servo.c:27:6:servo2_turn	24	static
+servo.c:32:6:servo3_init	16	static
+servo.c:41:6:servo3_scan	16	static
+servo.c:50:6:servo4_init	16	static
+servo.c:56:6:servo4_turn	24	static
+servo.c:61:6:servo1_down	16	static
+servo.c:69:6:servo2_shut	16	static

@@ -1,0 +1,17 @@
+.\objects\agvled.o: AGVLed.c
+.\objects\agvled.o: .\Libraries\StdPeriph\inc\stm32f10x_gpio.h
+.\objects\agvled.o: .\Libraries\CMSIS\stm32f10x.h
+.\objects\agvled.o: .\Libraries\CMSIS\core_cm3.h
+.\objects\agvled.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\agvled.o: .\Libraries\CMSIS\system_stm32f10x.h
+.\objects\agvled.o: .\Libraries\StdPeriph\inc\stm32f10x_conf.h
+.\objects\agvled.o: .\Libraries\StdPeriph\inc\stm32f10x_dma.h
+.\objects\agvled.o: .\Libraries\CMSIS\stm32f10x.h
+.\objects\agvled.o: .\Libraries\StdPeriph\inc\stm32f10x_exti.h
+.\objects\agvled.o: .\Libraries\StdPeriph\inc\stm32f10x_flash.h
+.\objects\agvled.o: .\Libraries\StdPeriph\inc\stm32f10x_gpio.h
+.\objects\agvled.o: .\Libraries\StdPeriph\inc\stm32f10x_rcc.h
+.\objects\agvled.o: .\Libraries\StdPeriph\inc\stm32f10x_usart.h
+.\objects\agvled.o: .\Libraries\StdPeriph\inc\misc.h
+.\objects\agvled.o: STM32Type.h
+.\objects\agvled.o: AGVLed.h

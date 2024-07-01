@@ -1,0 +1,8 @@
+control.c:10:6:setspeed	32	static
+control.c:24:8:roundPID	48	static
+control.c:36:6:spin	16	static
+control.c:62:6:groundturn	16	static
+control.c:69:6:fetchplace	8	static
+control.c:94:6:alongside	48	static
+control.c:105:6:avoidance	8	static
+control.c:243:6:avoid_stop	8	static

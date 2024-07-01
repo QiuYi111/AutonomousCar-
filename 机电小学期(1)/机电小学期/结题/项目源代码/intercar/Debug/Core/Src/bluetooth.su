@@ -1,0 +1,3 @@
+bluetooth.c:10:6:extract_RX	16	static
+bluetooth.c:24:6:mode_switch	32	static
+bluetooth.c:73:6:remote_control	16	static

@@ -1,0 +1,6 @@
+ccd.c:19:5:Get_Adc	8	static
+ccd.c:31:6:filter	40	static
+ccd.c:72:6:count_continuous	40	static
+ccd.c:314:6:camera_take	24	static
+ccd.c:360:5:get_camera_pos	4	static
+ccd.c:365:7:PID_cal_rot	40	static

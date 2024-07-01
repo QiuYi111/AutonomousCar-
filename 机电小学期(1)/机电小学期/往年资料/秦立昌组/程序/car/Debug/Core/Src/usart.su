@@ -1,0 +1,8 @@
+usart.c:36:6:MX_USART1_UART_Init	8	static
+usart.c:65:6:HAL_UART_MspInit	40	static
+usart.c:134:6:HAL_UART_MspDeInit	16	static
+stdio.h:214:5:fputc	16	static
+usart.c:174:6:Check_Rx	16	static
+usart.c:203:6:Usart_SendString	24	static
+usart.c:214:6:clear_command	16	static
+usart.c:227:1:__io_putchar	16	static

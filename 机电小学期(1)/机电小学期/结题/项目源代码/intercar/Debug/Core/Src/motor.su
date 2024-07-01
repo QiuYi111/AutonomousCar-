@@ -1,0 +1,6 @@
+motor.c:11:6:motor_init	8	static
+motor.c:20:6:motor_PWM	16	static
+motor.c:59:5:motor_leftfeedback	16	static
+motor.c:68:5:motor_rightfeedback	16	static
+motor.c:77:5:leftspeedPID	40	static
+motor.c:90:5:rightspeedPID	40	static

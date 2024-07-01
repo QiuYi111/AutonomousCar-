@@ -1,0 +1,4 @@
+openmv.c:10:6:Openmv_Receive_Data	24	static
+openmv.c:58:6:extract_MVRX1	8	static
+openmv.c:69:6:extract_MVRX2	8	static
+openmv.c:82:6:extract_MVRX3	8	static

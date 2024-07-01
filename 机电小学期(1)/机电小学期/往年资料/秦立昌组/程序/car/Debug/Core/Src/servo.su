@@ -1,0 +1,12 @@
+stm32f1xx_ll_tim.h:1063:22:LL_TIM_EnableCounter	16	static
+stm32f1xx_ll_tim.h:1074:22:LL_TIM_DisableCounter	16	static
+stm32f1xx_ll_tim.h:1314:22:LL_TIM_SetCounter	16	static
+stm32f1xx_ll_tim.h:1325:26:LL_TIM_GetCounter	16	static
+stm32f1xx_ll_gpio.h:723:26:LL_GPIO_IsInputPinSet	16	static
+stm32f1xx_ll_gpio.h:804:22:LL_GPIO_SetOutputPin	16	static
+stm32f1xx_ll_gpio.h:833:22:LL_GPIO_ResetOutputPin	16	static
+servo.c:16:6:servo_init	8	static
+servo.c:24:6:servo_set	24	static
+servo.c:30:6:servo_scan	16	static
+servo.c:61:6:TRIG_pulse	8	static
+servo.c:69:6:TRIG_echo	16	static

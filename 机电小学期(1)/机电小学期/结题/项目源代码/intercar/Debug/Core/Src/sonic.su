@@ -1,0 +1,5 @@
+sonic.c:8:6:sonic_delay	16	static
+sonic.c:13:5:get_distance1	8	static
+sonic.c:29:5:get_distance2	8	static
+sonic.c:45:5:get_distance3	8	static
+sonic.c:61:5:get_distance4	8	static

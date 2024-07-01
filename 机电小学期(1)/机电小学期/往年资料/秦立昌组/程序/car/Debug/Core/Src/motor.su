@@ -1,0 +1,7 @@
+motor.c:14:6:motor_init	8	static
+motor.c:23:6:motor_PWM	16	static
+motor.c:67:5:motor_read_speed_L	24	static
+motor.c:77:5:motor_read_speed_R	24	static
+motor.c:87:7:PID_cal_L	40	static
+motor.c:101:7:PID_cal_R	40	static
+motor.c:115:6:drive	32	static

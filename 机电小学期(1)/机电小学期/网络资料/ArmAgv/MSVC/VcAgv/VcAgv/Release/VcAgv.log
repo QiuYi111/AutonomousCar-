@@ -1,0 +1,33 @@
+﻿生成启动时间为 2021/3/9 18:50:12。
+     1>项目“D:\Work\ArmAgv\MSVC\VcAgv\VcAgv\VcAgv.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\VcAgv.pch" /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\VcAgv.pch" /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DrawCurve.cpp GenFun.cpp NetVarSFm.cpp StringBuf.cpp UartVarSFm.cpp VcAgv.cpp VcAgvDlg.cpp
+         DrawCurve.cpp
+         GenFun.cpp
+         NetVarSFm.cpp
+         StringBuf.cpp
+         UartVarSFm.cpp
+         VcAgv.cpp
+         VcAgvDlg.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D NDEBUG /l"0x0804" /IRelease\ /nologo /fo"Release\VcAgv.res" VcAgv.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Work\ArmAgv\MSVC\VcAgv\Release\VcAgv.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"D:\Work\ArmAgv\MSVC\VcAgv\Release\VcAgv.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Work\ArmAgv\MSVC\VcAgv\Release\VcAgv.lib" /MACHINE:X86 /SAFESEH Release\VcAgv.res
+         Release\DrawCurve.obj
+         Release\GenFun.obj
+         Release\NetVarSFm.obj
+         Release\stdafx.obj
+         Release\StringBuf.obj
+         Release\UartVarSFm.obj
+         Release\VcAgv.obj
+         Release\VcAgvDlg.obj
+         正在生成代码
+         已完成代码的生成
+         VcAgv.vcxproj -> D:\Work\ArmAgv\MSVC\VcAgv\Release\VcAgv.exe
+     1>已完成生成项目“D:\Work\ArmAgv\MSVC\VcAgv\VcAgv\VcAgv.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:07.46

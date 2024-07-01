@@ -1,0 +1,15 @@
+.\objects\agvgenfun.o: AGVGenFun.c
+.\objects\agvgenfun.o: STM32Type.h
+.\objects\agvgenfun.o: .\Libraries\CMSIS\stm32f10x.h
+.\objects\agvgenfun.o: .\Libraries\CMSIS\core_cm3.h
+.\objects\agvgenfun.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\agvgenfun.o: .\Libraries\CMSIS\system_stm32f10x.h
+.\objects\agvgenfun.o: .\Libraries\StdPeriph\inc\stm32f10x_conf.h
+.\objects\agvgenfun.o: .\Libraries\StdPeriph\inc\stm32f10x_dma.h
+.\objects\agvgenfun.o: .\Libraries\CMSIS\stm32f10x.h
+.\objects\agvgenfun.o: .\Libraries\StdPeriph\inc\stm32f10x_exti.h
+.\objects\agvgenfun.o: .\Libraries\StdPeriph\inc\stm32f10x_flash.h
+.\objects\agvgenfun.o: .\Libraries\StdPeriph\inc\stm32f10x_gpio.h
+.\objects\agvgenfun.o: .\Libraries\StdPeriph\inc\stm32f10x_rcc.h
+.\objects\agvgenfun.o: .\Libraries\StdPeriph\inc\stm32f10x_usart.h
+.\objects\agvgenfun.o: .\Libraries\StdPeriph\inc\misc.h
