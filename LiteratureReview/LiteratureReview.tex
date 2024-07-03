@@ -55,6 +55,12 @@ In this section, you describe the methods and procedures used in your research, 
 \label{subsec:label}
 2024年Yu Cao等人进行了深度强化学习循迹机器人的理论研究\cite{cao2024path}。他们将机器人与线路的横向偏差、机器人与路径之间的方向误差、机器人的速度和角速度等信息作为状态，而将机器人速度的变化率作为行动。在奖励函数中纳入与误差成正比的惩罚、与速度成正比的奖励以及惩罚机器人在困难弯道停下的参数。
 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/state.png}
+  \caption{状态定义物理量\cite{cao2024path}}
+\end{figure}
+
 在随机生成的环境中进行了50万次交互之后，机器人的路径实现收敛。相比传统的PP控制方法，采用深度强化学习的机器人有了自适应的速度控制能力，可以适应不同曲率的路径，还有相当不错的泛化能力，在随机生成的不同路径中均有优秀的效果。
 
 根据现实硬件情况在Webbot中建模并进行虚拟环境的预训练，再将完成训练的模型下载到实际小车中，就可以实现该方法的实际运用。
