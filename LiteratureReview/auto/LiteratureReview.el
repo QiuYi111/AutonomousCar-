@@ -3,8 +3,8 @@
  (lambda ()
    (TeX-run-style-hooks
     "latex2e"
-    "paper"
-    "paper10"
+    "ctexart"
+    "ctexart10"
     "ctex"
     "graphicx"
     "amsmath"
