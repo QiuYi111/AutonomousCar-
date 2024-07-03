@@ -5,7 +5,7 @@
 
 
 
-\documentclass{paper}
+\documentclass{IEEEtran}
 \usepackage{ctex}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -58,7 +58,7 @@ In this section, you describe the methods and procedures used in your research, 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth]{figures/state.png}
-  \caption{状态定义物理量\cite{cao2024path}}
+  \caption{状态定义物理量\cite{cao2024path}
 \end{figure}
 
 在随机生成的环境中进行了50万次交互之后，机器人的路径实现收敛。相比传统的PP控制方法，采用深度强化学习的机器人有了自适应的速度控制能力，可以适应不同曲率的路径，还有相当不错的泛化能力，在随机生成的不同路径中均有优秀的效果。
