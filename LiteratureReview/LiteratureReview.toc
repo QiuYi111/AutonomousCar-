@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}引言}{2}{}%
+\contentsline {section}{\numberline {2}机械设计研究综述}{2}{}%
+\contentsline {section}{\numberline {3}循迹研究综述}{2}{}%
+\contentsline {subsection}{\numberline {3.1}传统而有效的方法\cite {intro2023robot}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}传感器：红外传感器、光敏电阻等}{2}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}算法：从if-else到PID}{3}{}%
+\contentsline {subsection}{\numberline {3.2}更灵活高效的新方法}{3}{}%
+\contentsline {section}{\numberline {4}避障研究综述}{4}{}%
+\contentsline {section}{\numberline {5}讨论}{4}{}%
+\contentsline {section}{\numberline {6}结语}{4}{}%
