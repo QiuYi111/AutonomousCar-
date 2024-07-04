@@ -229,10 +229,45 @@ $45^{\circ}$,其正负号已被提出，不再区分正负。逆运动学方程�
 \section{避障研究综述}
 \label{sec:label}
 
+\part{原理设计方案}
+
+\section{机械设计}
+\subsection{车体}
+\label{subsec:label}
+\subsection{抓取机构}
+\section{测量}
+\label{sec:label}
+\section{循迹}
+\label{sec:label}
+我们选择使用视觉循迹方案。文献综述中包括了点传感器（红外传感器和光敏电阻）、线性CCD、视觉循迹和强化学习循迹四种方案。点传感器方案只有离散的极少状态，控制算法设计空间小，循迹的平滑性和速度都不够令人满意。CCD实际上是一个点传感器的阵列，信息获取精度仍然较低，前瞻性较有限。而强化学习方案要求更加复杂的环境感知能力，并且需要在虚拟环境中进行大量的预训练才能得到收敛的路径，实现难度大，我们现有的笔记本电脑显卡算力有限，因此不作为优先选择。
+\subsection{视觉传感器选择}
+\label{subsec:label}
+视觉传感器选型方面，我们将使用OpenMV。OpenMV的优势在于其本身是一个单片机，具备计算处理能力，有利于提高图像处理帧率，提高小车整体性能。另外，OpenMV配套开发工具封装良好，官方文档详细，开放资源丰富。这对于开发者而言无疑是能大大降低学习成本、提高效率的。
+\subsection{算法选择}
+\label{subsec:label}
+整体而言，我们的算法是先进行图像预处理再加入PID控制。
+
+我们会利用OpenMV自带的二值化工具将裁剪后的图像转化成黑白图像。然后，选取视场中中间靠前的区域作为ROI进行裁剪或矩阵池化来缩小矩阵。接着，用OpenMV自带的拟合函数计算出黑线方程。根据黑线斜率给出转向控制量。控制量的产生需要经过PID来保持稳定平滑。需要注意，PID的误差量是黑线斜率和基准斜率的差距，而控制量是两轮之间的转速差。
 
 
-\section{讨论}
-\section{结语}
+\section{数据通信和回传}
+\label{sec:label}
+\subsection{蓝牙模块}
+\label{subsec:label}
+\subsection{控制终端}
+\label{subsec:label}
+\section{驱动}
+\label{sec:label}
+\subsection{处理器}
+\label{subsec:label}
+\subsection{电机驱动}
+\label{subsec:label}
+\subsection{传感器}
+\label{subsec:label}
+\section{硬件清单}
+\label{sec:label}
+
+
 
 
 \bibliographystyle{IEEEtran}

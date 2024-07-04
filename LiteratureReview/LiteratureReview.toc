@@ -31,5 +31,19 @@
 \contentsline {subsubsection}{\numberline {7.2.1}计算机视觉\cite {opencv}}{9}{}%
 \contentsline {subsubsection}{\numberline {7.2.2}强化学习}{10}{}%
 \contentsline {section}{\numberline {8}避障研究综述}{11}{}%
-\contentsline {section}{\numberline {9}讨论}{11}{}%
-\contentsline {section}{\numberline {10}结语}{11}{}%
+\contentsline {part}{IV\hspace {1em}原理设计方案}{11}{}%
+\contentsline {section}{\numberline {9}机械设计}{11}{}%
+\contentsline {subsection}{\numberline {9.1}车体}{11}{}%
+\contentsline {subsection}{\numberline {9.2}抓取机构}{11}{}%
+\contentsline {section}{\numberline {10}测量}{11}{}%
+\contentsline {section}{\numberline {11}循迹}{11}{}%
+\contentsline {subsection}{\numberline {11.1}视觉传感器选择}{11}{}%
+\contentsline {subsection}{\numberline {11.2}算法选择}{11}{}%
+\contentsline {section}{\numberline {12}数据通信和回传}{12}{}%
+\contentsline {subsection}{\numberline {12.1}蓝牙模块}{12}{}%
+\contentsline {subsection}{\numberline {12.2}控制终端}{12}{}%
+\contentsline {section}{\numberline {13}驱动}{12}{}%
+\contentsline {subsection}{\numberline {13.1}处理器}{12}{}%
+\contentsline {subsection}{\numberline {13.2}电机驱动}{12}{}%
+\contentsline {subsection}{\numberline {13.3}传感器}{12}{}%
+\contentsline {section}{\numberline {14}硬件清单}{12}{}%
