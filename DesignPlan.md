@@ -46,7 +46,7 @@
 ## 信息回传：
 
 -   蓝牙模块(jingyi jh)
--   ui界面(gpt)
+-   ui界面
 
 
 <a id="orgb132868"></a>
