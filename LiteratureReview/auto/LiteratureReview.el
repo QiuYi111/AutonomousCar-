@@ -3,16 +3,19 @@
  (lambda ()
    (TeX-run-style-hooks
     "latex2e"
-    "ctexart"
-    "ctexart10"
+    "paper"
+    "paper10"
     "ctex"
+    "geometry"
     "graphicx"
     "amsmath"
     "cite"
+    "subcaption"
     "booktabs")
    (LaTeX-add-labels
+    "sec:label"
     "subsec:label"
-    "sec:label")
+    "fig:label")
    (LaTeX-add-bibliographies
     "references"))
  :latex)
