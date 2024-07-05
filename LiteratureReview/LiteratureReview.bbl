@@ -21,6 +21,9 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{intro2023robot}
+Ralph, ``Line follower robot: Techniques and technologies,'' Website, 2023.
+
 \bibitem{chasu}
 杨俊驹, 林睿, 王振华, and 孙立宁,
   ``轮式移动机器人运动控制系统研究与设计,''
@@ -31,16 +34,13 @@
   ``基于模糊pid的麦克纳姆轮移动平台的控制算法,''
   \emph{应用科技}, vol.~44, no.~06, pp. 53--59, 2017.
 
-\bibitem{intro2023robot}
-Ralph, ``Line follower robot: Techniques and technologies,'' Website, 2023.
+\bibitem{CCD}
+wezhonhang, ``Stm32f103rct6智能小车用ccd模块的循迹测评,'' Website,
+  2023.
 
 \bibitem{opencv}
 叫我田小霖啦,
   ``Opencv+tensorflow简单的机器小车传统视觉寻迹,'' Website, 2023.
-
-\bibitem{CCD}
-wezhonhang, ``Stm32f103rct6智能小车用ccd模块的循迹测评,'' Website,
-  2023.
 
 \bibitem{cao2024path}
 Y.~Cao, K.~Ni, T.~Kawaguchi, and S.~Hashimoto, ``Path following for autonomous
