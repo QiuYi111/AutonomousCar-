@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.13)  6 JUL 2024 17:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.13)  6 JUL 2024 17:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -792,77 +792,77 @@ Chapter 2.
 
 ] [5]
 Chapter 3.
-<figures/chasu.png, id=200, 174.762pt x 121.8735pt>
-File: figures/chasu.png Graphic file (type png)
-<use figures/chasu.png>
-Package pdftex.def Info: figures/chasu.png  used on input line 100.
-(pdftex.def)             Requested size: 239.00406pt x 166.68486pt.
 [6
 
-] [7 <./figures/chasu.png>]
-<figures/mac.png, id=225, 196.48407pt x 160.34906pt>
+]
+<figures/chasu.png, id=207, 174.762pt x 121.8735pt>
+File: figures/chasu.png Graphic file (type png)
+<use figures/chasu.png>
+Package pdftex.def Info: figures/chasu.png  used on input line 102.
+(pdftex.def)             Requested size: 239.00406pt x 166.68486pt.
+ [7 <./figures/chasu.png>]
+<figures/mac.png, id=221, 196.48407pt x 160.34906pt>
 File: figures/mac.png Graphic file (type png)
 <use figures/mac.png>
-Package pdftex.def Info: figures/mac.png  used on input line 134.
+Package pdftex.def Info: figures/mac.png  used on input line 136.
 (pdftex.def)             Requested size: 239.00406pt x 195.0628pt.
- [8 <./figures/mac.png>]
-<figures/sensor.jpg, id=239, 3011.25pt x 4015.0pt>
+ [8 <./figures/mac.png>] [9]
+<figures/sensor.jpg, id=244, 3011.25pt x 4015.0pt>
 File: figures/sensor.jpg Graphic file (type jpg)
 <use figures/sensor.jpg>
-Package pdftex.def Info: figures/sensor.jpg  used on input line 162.
+Package pdftex.def Info: figures/sensor.jpg  used on input line 164.
 (pdftex.def)             Requested size: 239.00406pt x 318.63348pt.
- [9]
-<figures/straight.png, id=250, 115.02975pt x 102.98476pt>
+ [10 <./figures/sensor.jpg>]
+<figures/straight.png, id=253, 115.02975pt x 102.98476pt>
 File: figures/straight.png Graphic file (type png)
 <use figures/straight.png>
-Package pdftex.def Info: figures/straight.png  used on input line 184.
+Package pdftex.def Info: figures/straight.png  used on input line 187.
 (pdftex.def)             Requested size: 143.40388pt x 128.40216pt.
-<figures/left.png, id=251, 121.6545pt x 109.00725pt>
+<figures/left.png, id=254, 121.6545pt x 109.00725pt>
 File: figures/left.png Graphic file (type png)
 <use figures/left.png>
-Package pdftex.def Info: figures/left.png  used on input line 191.
+Package pdftex.def Info: figures/left.png  used on input line 194.
 (pdftex.def)             Requested size: 143.40388pt x 128.50932pt.
 File: figures/left.png Graphic file (type png)
 <use figures/left.png>
-Package pdftex.def Info: figures/left.png  used on input line 198.
+Package pdftex.def Info: figures/left.png  used on input line 201.
 (pdftex.def)             Requested size: 143.40388pt x 128.50932pt.
-<figures/jumpscan.png, id=252, 128.27925pt x 113.82526pt>
+<figures/jumpscan.png, id=255, 128.27925pt x 113.82526pt>
 File: figures/jumpscan.png Graphic file (type png)
 <use figures/jumpscan.png>
-Package pdftex.def Info: figures/jumpscan.png  used on input line 211.
+Package pdftex.def Info: figures/jumpscan.png  used on input line 214.
 (pdftex.def)             Requested size: 191.20032pt x 169.67276pt.
-<figures/pooling.png, id=253, 638.385pt x 376.40625pt>
+<figures/pooling.png, id=256, 638.385pt x 376.40625pt>
 File: figures/pooling.png Graphic file (type png)
 <use figures/pooling.png>
-Package pdftex.def Info: figures/pooling.png  used on input line 218.
+Package pdftex.def Info: figures/pooling.png  used on input line 221.
 (pdftex.def)             Requested size: 191.20032pt x 112.7332pt.
- [10 <./figures/sensor.jpg>]
-<figures/state.png, id=261, 414.69214pt x 298.54393pt>
+ [11 <./figures/straight.png> <./figures/left.png>]
+<figures/state.png, id=267, 414.69214pt x 298.54393pt>
 File: figures/state.png Graphic file (type png)
 <use figures/state.png>
-Package pdftex.def Info: figures/state.png  used on input line 234.
+Package pdftex.def Info: figures/state.png  used on input line 235.
 (pdftex.def)             Requested size: 239.00406pt x 172.06229pt.
- [11 <./figures/straight.png> <./figures/left.png> <./figures/jumpscan.png> <./
-figures/pooling.png>]
-<figures/hongwaibizhang.png, id=271, 186.6975pt x 234.1247pt>
+ [12 <./figures/jumpscan.png> <./figures/pooling.png> <./figures/state.png>]
+<figures/hongwaibizhang.png, id=276, 186.6975pt x 234.1247pt>
 File: figures/hongwaibizhang.png Graphic file (type png)
 <use figures/hongwaibizhang.png>
-Package pdftex.def Info: figures/hongwaibizhang.png  used on input line 268.
+Package pdftex.def Info: figures/hongwaibizhang.png  used on input line 256.
 (pdftex.def)             Requested size: 239.00406pt x 299.73216pt.
- [12 <./figures/state.png>]
-<figures/super.png, id=281, 401.24907pt x 240.14719pt>
+ [13 <./figures/hongwaibizhang.png>]
+<figures/super.png, id=283, 401.24907pt x 240.14719pt>
 File: figures/super.png Graphic file (type png)
 <use figures/super.png>
-Package pdftex.def Info: figures/super.png  used on input line 291.
+Package pdftex.def Info: figures/super.png  used on input line 269.
 (pdftex.def)             Requested size: 239.00406pt x 143.04506pt.
- [13 <./figures/hongwaibizhang.png>] [14 <./figures/super.png>]
-<figures/yichuan.png, id=294, 201.75375pt x 150.5625pt>
+ [14 <./figures/super.png>] [15]
+<figures/yichuan.png, id=297, 201.75375pt x 150.5625pt>
 File: figures/yichuan.png Graphic file (type png)
 <use figures/yichuan.png>
-Package pdftex.def Info: figures/yichuan.png  used on input line 365.
+Package pdftex.def Info: figures/yichuan.png  used on input line 326.
 (pdftex.def)             Requested size: 239.00406pt x 178.3629pt.
 
-Overfull \hbox (0.62852pt too wide) in paragraph at lines 362--368
+Overfull \hbox (0.62852pt too wide) in paragraph at lines 323--329
  \C70/rm/bx/n/10.53937/90 W \C70/rm/bx/n/10.53937/4f   \C70/rm/bx/n/10.53937/7b
  — \C70/rm/bx/n/10.53937/6c Õ[] \C70/rm/m/n/10.53937/90 W \C70/rm/m/n/10.53937/
 4f   \C70/rm/m/n/10.53937/7b — \C70/rm/m/n/10.53937/6c Õ |\C70/rm/m/n/10.53937/
@@ -878,40 +878,41 @@ ff ^^H|\OT1/cmr/m/n/10.53937 GA|\C70/rm/m/n/10.53937/ff 	| \C70/rm/m/n/10.53937
 0.53937/76 „ \OT1/cmr/m/n/10.53937 [11]|\C70/rm/m/n/10.53937/30 ^^B|
  []
 
-[15]
-<figures/yiqun.png, id=299, 212.795pt x 188.20313pt>
+[16 <./figures/yichuan.png>]
+<figures/yiqun.png, id=303, 212.795pt x 188.20313pt>
 File: figures/yiqun.png Graphic file (type png)
 <use figures/yiqun.png>
-Package pdftex.def Info: figures/yiqun.png  used on input line 373.
+Package pdftex.def Info: figures/yiqun.png  used on input line 335.
 (pdftex.def)             Requested size: 239.00406pt x 211.39485pt.
- [16 <./figures/yichuan.png> <./figures/yiqun.png>]
-<figures/APF.png, id=306, 203.25937pt x 175.15437pt>
+ [17 <./figures/yiqun.png>]
+<figures/APF.png, id=310, 203.25937pt x 175.15437pt>
 File: figures/APF.png Graphic file (type png)
 <use figures/APF.png>
-Package pdftex.def Info: figures/APF.png  used on input line 400.
+Package pdftex.def Info: figures/APF.png  used on input line 362.
 (pdftex.def)             Requested size: 239.00406pt x 205.9641pt.
- [17] [18 <./figures/APF.png>]
+ [18 <./figures/APF.png>] [19]
 Chapter 4.
-<figures/pickup.png, id=317, 193.47281pt x 116.68594pt>
+<figures/pickup.png, id=320, 193.47281pt x 116.68594pt>
 File: figures/pickup.png Graphic file (type png)
 <use figures/pickup.png>
-Package pdftex.def Info: figures/pickup.png  used on input line 436.
+Package pdftex.def Info: figures/pickup.png  used on input line 398.
 (pdftex.def)             Requested size: 239.00406pt x 144.14778pt.
-[19
+[20
 
- <./figures/pickup.png>] [20] [21]
-<figures/hc-05.png, id=330, 552.0625pt x 393.47pt>
+ <./figures/pickup.png>] [21] [22]
+<figures/hc-05.png, id=333, 552.0625pt x 393.47pt>
 File: figures/hc-05.png Graphic file (type png)
 <use figures/hc-05.png>
-Package pdftex.def Info: figures/hc-05.png  used on input line 508.
+Package pdftex.def Info: figures/hc-05.png  used on input line 470.
 (pdftex.def)             Requested size: 239.00406pt x 170.34753pt.
-<figures/ui.jpg, id=331, 1372.12625pt x 1084.05pt>
+ [23 <./figures/hc-05.png>]
+<figures/ui.jpg, id=339, 1372.12625pt x 1084.05pt>
 File: figures/ui.jpg Graphic file (type jpg)
 <use figures/ui.jpg>
-Package pdftex.def Info: figures/ui.jpg  used on input line 517.
+Package pdftex.def Info: figures/ui.jpg  used on input line 479.
 (pdftex.def)             Requested size: 239.00406pt x 188.81836pt.
 
-Overfull \hbox (9.49611pt too wide) in paragraph at lines 528--529
+Overfull \hbox (9.49611pt too wide) in paragraph at lines 492--493
 []\C70/rm/m/n/10.53937/90 	 \C70/rm/m/n/10.53937/62 é \C70/rm/m/n/10.53937/4f ^
 ^? \C70/rm/m/n/10.53937/75 (\OT1/cmr/m/n/10.53937 PWM\C70/rm/m/n/10.53937/65 ¹ 
 \C70/rm/m/n/10.53937/6c Õ \C70/rm/m/n/10.53937/9a q \C70/rm/m/n/10.53937/52 ¨|\
@@ -928,15 +929,13 @@ C70/rm/m/n/10.53937/ff ^^L| \C70/rm/m/n/10.53937/5e v \C70/rm/m/n/10.53937/75 (
 7 PID\C70/rm/m/n/10.53937/5b ž
  []
 
-[22 <./figures/hc-05.png>] [23 <./figures/ui.jpg>] (LiteratureReview.bbl
-[24]) [25
+[24 <./figures/ui.jpg>] (LiteratureReview.bbl [25]) [26
 
 ] (LiteratureReview.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
@@ -946,10 +945,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 10547 strings out of 474370
- 186312 string characters out of 5754668
- 1964754 words of memory out of 5000000
- 32366 multiletter control sequences out of 15000+600000
+ 10553 strings out of 474370
+ 186434 string characters out of 5754668
+ 1958754 words of memory out of 5000000
+ 32372 multiletter control sequences out of 15000+600000
  650817 words of font info for 348 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,12n,83p,1171b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1023,9 +1022,9 @@ mr7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/CTEX/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmsy7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 
-Output written on LiteratureReview.pdf (26 pages, 4323868 bytes).
+Output written on LiteratureReview.pdf (27 pages, 4327646 bytes).
 PDF statistics:
- 903 PDF objects out of 1000 (max. 8388607)
+ 906 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  397 words of extra memory for PDF output out of 10000 (max. 10000000)
 
