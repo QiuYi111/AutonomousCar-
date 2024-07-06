@@ -8,6 +8,14 @@
     "intro2023robot"
     "cao2024path"
     "CCD"
-    "opencv"))
+    "opencv"
+    "jh1"
+    "jh2"
+    "jh3"
+    "jh4"
+    "jh5"
+    "jh6"
+    "jh7"
+    "jh8"))
  '(or :bibtex :latex))
 
