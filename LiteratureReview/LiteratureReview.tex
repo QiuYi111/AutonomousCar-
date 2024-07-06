@@ -511,6 +511,14 @@ F_req2&=\frac n2k\left(\frac1{\rho(q,q_g)}-\frac1{\rho_0}\right)^2\rho_g^{n-1}
 
 \subsection{控制终端}
 \label{subsec:label}
+为了便于控制和调试，我们计划通过蓝牙传输的方式将数据传回PC端进行观察和控制，可以通过编码器数据得知车轮转过的里程数，通过陀螺仪确定小车转过的角度。此外，还可以通过蓝牙模块在PC终端对小车进行控制，比如紧急停车和转向等，方便在小车出现问题的时候观察出现问题的模块，从而进行针对性的改变和调试，提高调试效率。
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/ui.jpg}
+  \caption{控制终端UI概念图 }
+\end{figure}
+
+
 \section{驱动}
 \label{sec:label}
 \subsection{处理器}

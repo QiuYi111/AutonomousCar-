@@ -68,8 +68,8 @@
 \contentsline {section}{\numberline {4.5}数据通信和回传}{22}{}%
 \contentsline {subsection}{\numberline {4.5.1}蓝牙模块}{22}{}%
 \contentsline {subsection}{\numberline {4.5.2}控制终端}{22}{}%
-\contentsline {section}{\numberline {4.6}驱动}{22}{}%
-\contentsline {subsection}{\numberline {4.6.1}处理器}{22}{}%
-\contentsline {subsection}{\numberline {4.6.2}电机驱动}{22}{}%
+\contentsline {section}{\numberline {4.6}驱动}{23}{}%
+\contentsline {subsection}{\numberline {4.6.1}处理器}{23}{}%
+\contentsline {subsection}{\numberline {4.6.2}电机驱动}{23}{}%
 \contentsline {subsection}{\numberline {4.6.3}传感器}{23}{}%
 \contentsline {section}{\numberline {4.7}硬件清单}{24}{}%

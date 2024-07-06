@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.13)  6 JUL 2024 16:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.13)  6 JUL 2024 17:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -905,8 +905,13 @@ File: figures/hc-05.png Graphic file (type png)
 <use figures/hc-05.png>
 Package pdftex.def Info: figures/hc-05.png  used on input line 508.
 (pdftex.def)             Requested size: 239.00406pt x 170.34753pt.
+<figures/ui.jpg, id=331, 1372.12625pt x 1084.05pt>
+File: figures/ui.jpg Graphic file (type jpg)
+<use figures/ui.jpg>
+Package pdftex.def Info: figures/ui.jpg  used on input line 517.
+(pdftex.def)             Requested size: 239.00406pt x 188.81836pt.
 
-Overfull \hbox (9.49611pt too wide) in paragraph at lines 520--521
+Overfull \hbox (9.49611pt too wide) in paragraph at lines 528--529
 []\C70/rm/m/n/10.53937/90 	 \C70/rm/m/n/10.53937/62 é \C70/rm/m/n/10.53937/4f ^
 ^? \C70/rm/m/n/10.53937/75 (\OT1/cmr/m/n/10.53937 PWM\C70/rm/m/n/10.53937/65 ¹ 
 \C70/rm/m/n/10.53937/6c Õ \C70/rm/m/n/10.53937/9a q \C70/rm/m/n/10.53937/52 ¨|\
@@ -923,10 +928,10 @@ C70/rm/m/n/10.53937/ff ^^L| \C70/rm/m/n/10.53937/5e v \C70/rm/m/n/10.53937/75 (
 7 PID\C70/rm/m/n/10.53937/5b ž
  []
 
-[22 <./figures/hc-05.png>] [23] (LiteratureReview.bbl [24]) [25
+[22 <./figures/hc-05.png>] [23 <./figures/ui.jpg>] (LiteratureReview.bbl
+[24]) [25
 
-]
-(LiteratureReview.aux)
+] (LiteratureReview.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -941,10 +946,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 10537 strings out of 474370
- 186111 string characters out of 5754668
+ 10547 strings out of 474370
+ 186312 string characters out of 5754668
  1964754 words of memory out of 5000000
- 32356 multiletter control sequences out of 15000+600000
+ 32366 multiletter control sequences out of 15000+600000
  650817 words of font info for 348 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,12n,83p,1171b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1018,9 +1023,9 @@ mr7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/CTEX/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmsy7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 
-Output written on LiteratureReview.pdf (26 pages, 4206810 bytes).
+Output written on LiteratureReview.pdf (26 pages, 4323868 bytes).
 PDF statistics:
- 902 PDF objects out of 1000 (max. 8388607)
+ 903 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 392 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 397 words of extra memory for PDF output out of 10000 (max. 10000000)
 
