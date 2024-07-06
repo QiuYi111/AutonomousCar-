@@ -47,29 +47,29 @@
 \contentsline {subsubsection}{局部避障算法}{17}{}%
 \contentsline {paragraph}{人工势场法\cite {jh6}}{17}{}%
 \contentsline {paragraph}{模糊逻辑算法}{19}{}%
-\contentsline {chapter}{\numberline {4}原理设计方案}{20}{}%
+\contentsline {chapter}{\numberline {4}原型设计方案}{20}{}%
 \contentsline {section}{\numberline {4.1}机械设计}{20}{}%
 \contentsline {subsection}{\numberline {4.1.1}车体}{20}{}%
 \contentsline {subsection}{\numberline {4.1.2}抓取机构}{20}{}%
-\contentsline {section}{\numberline {4.2}测量}{21}{}%
-\contentsline {subsection}{\numberline {4.2.1}小车位姿测量}{21}{}%
-\contentsline {subsection}{\numberline {4.2.2}循迹中的测量}{21}{}%
-\contentsline {subsection}{\numberline {4.2.3}避障中的测量}{21}{}%
-\contentsline {section}{\numberline {4.3}循迹}{21}{}%
-\contentsline {subsection}{\numberline {4.3.1}视觉传感器选择}{21}{}%
-\contentsline {subsection}{\numberline {4.3.2}算法选择}{21}{}%
-\contentsline {section}{\numberline {4.4}避障算法设计}{22}{}%
-\contentsline {subsection}{\numberline {4.4.1}避障信息获取}{22}{}%
-\contentsline {subsubsection}{位置信息}{22}{}%
-\contentsline {subsubsection}{障碍物信息}{22}{}%
-\contentsline {subsection}{\numberline {4.4.2}避障算法设计}{22}{}%
-\contentsline {subsubsection}{数学模型改进}{22}{}%
-\contentsline {subsubsection}{思路改进}{23}{}%
-\contentsline {section}{\numberline {4.5}数据通信和回传}{23}{}%
-\contentsline {subsection}{\numberline {4.5.1}蓝牙模块}{23}{}%
-\contentsline {subsection}{\numberline {4.5.2}控制终端}{24}{}%
-\contentsline {section}{\numberline {4.6}驱动}{24}{}%
-\contentsline {subsection}{\numberline {4.6.1}处理器}{24}{}%
-\contentsline {subsection}{\numberline {4.6.2}电机驱动}{24}{}%
-\contentsline {subsection}{\numberline {4.6.3}传感器}{24}{}%
-\contentsline {section}{\numberline {4.7}硬件清单}{25}{}%
+\contentsline {section}{\numberline {4.2}测量}{22}{}%
+\contentsline {subsection}{\numberline {4.2.1}小车位姿测量}{22}{}%
+\contentsline {subsection}{\numberline {4.2.2}循迹中的测量}{22}{}%
+\contentsline {subsection}{\numberline {4.2.3}避障中的测量}{22}{}%
+\contentsline {section}{\numberline {4.3}循迹}{22}{}%
+\contentsline {subsection}{\numberline {4.3.1}视觉传感器选择}{22}{}%
+\contentsline {subsection}{\numberline {4.3.2}算法选择}{22}{}%
+\contentsline {section}{\numberline {4.4}避障算法设计}{23}{}%
+\contentsline {subsection}{\numberline {4.4.1}避障信息获取}{23}{}%
+\contentsline {subsubsection}{位置信息}{23}{}%
+\contentsline {subsubsection}{障碍物信息}{23}{}%
+\contentsline {subsection}{\numberline {4.4.2}避障算法设计}{23}{}%
+\contentsline {subsubsection}{数学模型改进}{23}{}%
+\contentsline {subsubsection}{思路改进}{24}{}%
+\contentsline {section}{\numberline {4.5}数据通信和回传}{24}{}%
+\contentsline {subsection}{\numberline {4.5.1}蓝牙模块}{24}{}%
+\contentsline {subsection}{\numberline {4.5.2}控制终端}{25}{}%
+\contentsline {section}{\numberline {4.6}驱动}{25}{}%
+\contentsline {subsection}{\numberline {4.6.1}处理器}{25}{}%
+\contentsline {subsection}{\numberline {4.6.2}电机驱动}{25}{}%
+\contentsline {subsection}{\numberline {4.6.3}传感器}{25}{}%
+\contentsline {section}{\numberline {4.7}硬件清单}{26}{}%

@@ -16,7 +16,7 @@
 \usepackage{multirow}
 % \usepackage{graphicx}
 \usepackage[table,xcdraw]{xcolor}
-\title{自主移动车实现文献综述和原理设计}
+\title{自主移动车文献综述和原型设计}
 \author{邱璟祎, 周俊豪, 张峻瑜\\
   （按姓名首字母排序）
 }
@@ -198,7 +198,7 @@ $45^{\circ}$,其正负号已被提出，不再区分正负。逆运动学方程�
  \hfill
  \begin{subfigure}[b]{0.3\textwidth}
    \centering
-   \includegraphics[width=\textwidth]{figures/left.png}
+   \includegraphics[width=\textwidth]{figures/right.png}
    \caption{右转}
    \label{fig:label}
  \end{subfigure}
@@ -237,6 +237,7 @@ $45^{\circ}$,其正负号已被提出，不再区分正负。逆运动学方程�
 \end{figure}
 
 \[ r\left(t\right)=-k_{1}\left|e_{p}\left(t\right)\right|+k_{2}v\left(t\right)\left(1-\frac{1}{e_{tol}}\left|e_{p}\left(t\right)\right|\right)-k_{3}F\left(t\right) \]
+
 在随机生成的环境中进行了50万次交互之后，机器人的路径实现收敛。相比传统的PP控制方法，采用深度强化学习的机器人有了自适应的速度控制能力，可以适应不同曲率的路径，还有相当不错的泛化能力，在随机生成的不同路径中均有优秀的效果。
 
 根据现实硬件情况在Webbot中建模并进行虚拟环境的预训练，再将完成训练的模型下载到实际小车中，就可以实现该方法的实际运用。
@@ -386,11 +387,18 @@ F_req2&=\frac n2k\left(\frac1{\rho(q,q_g)}-\frac1{\rho_0}\right)^2\rho_g^{n-1}
 模糊逻辑算法是一种常用的在线路径规划算法，一般先建立模型，再进行局部路径规划。该算法根据观摩和记录驾驶员的操作过程得到，无需针对特定对象建立相关数学模型，而是直接将驾驶员的驾驶经验转换成相关控制信号。车辆在进行避障路径规划的过程中，将获得的环境信息模糊化，通过不断查找相关的模糊规则获得规划结果。还有学者建立了动态模糊环境模型，将环境中运动物体的运动状态用模糊集标识，包括运动物体当前位置、速度大小和方向等，之后利用模糊规则对各个方向进行综合评价以得到搜索结果。
 模糊算法不需要车辆精确定位，所以具有很高的鲁棒性，对各种未知情况适应性较好，路径规划效果良好，但是模糊算法不能自我学习，模糊规则指定后就一成不变，灵活性较差\cite{jh6}。
 
-\chapter{原理设计方案}
+\chapter{原型设计方案}
 
 \section{机械设计}
 \subsection{车体}
 \label{subsec:label}
+车体的驱动机构我们计划采用两个前轮驱动轮+一个后轮万向轮的结构，因此车体构型接近倒三角型。纵向上采用双层结构，下层搭载电机、电池、机械夹爪和舵机等，上层搭载各个控制硬件和通信硬件，包括STM32、电压转换模块、蓝牙模块和超声波传感器等。为了让OpenMV工作效果更好，将其放置到更高的位置上，便于增加观测距离。
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/body.jpg}
+  \caption{车体原型}
+\end{figure}
+
 \subsection{抓取机构}
 抓取机构既需要满足摩擦力的需求，能够稳定地夹取物体；同时又不能太大，避免遮挡传感器干扰其正常工作。综合考虑以上要求，在机械夹爪、吸盘和仿生结构中我们最终选择了单自由度的机械夹爪结构。利用电机转动带动齿轮转动从而带动机械夹爪转动，使得一个电机能够同时驱动两侧夹爪转动。夹爪的上面和下面各有一对连杆进行固定和限位，并使用螺栓螺母等零件加固，保证夹取机构的稳定性。
 \begin{figure}[ht]
