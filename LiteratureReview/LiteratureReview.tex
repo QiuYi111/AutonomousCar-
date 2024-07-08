@@ -38,7 +38,7 @@
 
 
 \chapter{需求分析}
-课程任务为：设计并实现一个机电系统，按照规定路线，在2种不同场地，将指定物品从一个指定位置运输到另一指定位置。，两种场地分别需要实现循迹和避障的功能。为了完成这个任务，将任务分解为机械结构、电气、测量、算法和系统软件五个方面的内容。
+课程任务为：设计并实现一个机电系统，按照规定路线，在2种不同场地，将指定物品从一个指定位置运输到另一指定位置。两种场地分别需要实现循迹和避障的功能。为了完成这个任务，将任务分解为机械结构、电气、测量、算法和系统软件五个方面的内容。
 \section{机械结构}
 \label{sec:label}
 \subsection{车体结构}
@@ -123,14 +123,14 @@
 \newpage
 $\alpha_1$和$\alpha_2$分别为前左轮和后左轮，前右轮和右轮的转角；2L 为左右轮距离； 2K 为前后轮轴距；$v$和$\omega$分别为车子质心的线速度和角速度，$V_1,V_2,V_3,V_4$分别为各个轮中心的实际运动方向。由图 可以得出各速度和转角的关系:
 \[\begin{gathered}
-V_{1}=\omega R_{1}=\omega\frac{K}{sin\alpha_{1}}\leftarrow \\
-V_{2}=\omega R_{2}=\omega\frac{K}{sin\alpha_{2}}\leftarrow \\
-V_{3}=V_{1}=\omega\frac{K}{sin\alpha_{1}}\leftarrow \\
-V_{4}=V_{2}=\omega\frac{K}{sin\alpha_{2}}\leftarrow \\
-V_{1y}=V_{1}cos\alpha_{1}= \omega\frac{K}{tan\alpha_{1}}=\omega(R-L)^{\leftrightarrow}\\
-V_{2y}=V_{2}cos\alpha_{2}= \omega\frac{K}{tan\alpha_{2}}=\omega(R+L)^{\leftrightarrow}\\
-V_{3y}=V_{3}cos\alpha_{1}= \omega\frac{K}{tan\alpha_{1}}=\omega(R-L)^{\leftrightarrow}\\
-V_{4y}=V_{4}cos\alpha_{2}= \omega\frac{K}{tan\alpha_{2}}=\omega(R+L)^{\leftrightarrow}
+V_{1}=\omega R_{1}=\omega\frac{K}{sin\alpha_{1}}\\
+V_{2}=\omega R_{2}=\omega\frac{K}{sin\alpha_{2}} \\
+V_{3}=V_{1}=\omega\frac{K}{sin\alpha_{1}} \\
+V_{4}=V_{2}=\omega\frac{K}{sin\alpha_{2}}\\
+V_{1y}=V_{1}cos\alpha_{1}= \omega\frac{K}{tan\alpha_{1}}=\omega(R-L)\\
+V_{2y}=V_{2}cos\alpha_{2}= \omega\frac{K}{tan\alpha_{2}}=\omega(R+L)\\
+V_{3y}=V_{3}cos\alpha_{1}= \omega\frac{K}{tan\alpha_{1}}=\omega(R-L)\\
+V_{4y}=V_{4}cos\alpha_{2}= \omega\frac{K}{tan\alpha_{2}}=\omega(R+L)
 \end{gathered}\]
 式中$R=\frac v\omega $。
 
@@ -149,11 +149,11 @@ V_{4y}=V_{4}cos\alpha_{2}= \omega\frac{K}{tan\alpha_{2}}=\omega(R+L)^{\leftright
 
 
 用$R$表示全向轮轴心到轮外廓圆周面的距离即轮的半径；$V_i$表示第$i$轮的速度；$\alpha$表示辊子轴线与全向轮轴线夹角；$\omega_i$表示全向轮绕轮轴的转速；i=1,2,3,4,分别代表左前轮、右前轮、左后轮、右后轮。联立可得矩阵方程:
-\[ V_i=\begin{pmatrix}R\\4\end{pmatrix}\begin{bmatrix}1&1&1&1\\\tan\alpha&-\tan\alpha&-\tan\alpha&\tan\alpha\\-\frac{1}{l_0}&\frac{1}{l_0}&-\frac{1}{l_0}&\frac{1}{l_0}\end{bmatrix}\begin{bmatrix}\omega_1\\\omega_2\\\omega_3\\\omega_4\end{bmatrix}\leftarrow  \]
+\[ V_i=\begin{pmatrix}R\\4\end{pmatrix}\begin{bmatrix}1&1&1&1\\\tan\alpha&-\tan\alpha&-\tan\alpha&\tan\alpha\\-\frac{1}{l_0}&\frac{1}{l_0}&-\frac{1}{l_0}&\frac{1}{l_0}\end{bmatrix}\begin{bmatrix}\omega_1\\\omega_2\\\omega_3\\\omega_4\end{bmatrix}\]
 
 式中$l_0=$W+ Lcos$\alpha$,其中 W 为移动平台宽度，L 为其前后轮轴距；而$\alpha$取
 $45^{\circ}$,其正负号已被提出，不再区分正负。逆运动学方程为:
-\[\begin{bmatrix}\omega_1\\\omega_2\\\omega_3\\\omega_4\end{bmatrix}=\text{K}\begin{bmatrix}V_y\\V_x\\\omega\end{bmatrix}=\begin{pmatrix}\frac{1}{R}\end{pmatrix}\begin{bmatrix}1&cot\alpha&-l_0\\1&-cot\alpha&l_0\\1&-cot\alpha&-l_0\\1&cot\alpha&l_0\end{bmatrix}\begin{bmatrix}V_y\\V_x\\\omega\end{bmatrix}\leftarrow \]
+\[\begin{bmatrix}\omega_1\\\omega_2\\\omega_3\\\omega_4\end{bmatrix}=\text{K}\begin{bmatrix}V_y\\V_x\\\omega\end{bmatrix}=\begin{pmatrix}\frac{1}{R}\end{pmatrix}\begin{bmatrix}1&cot\alpha&-l_0\\1&-cot\alpha&l_0\\1&-cot\alpha&-l_0\\1&cot\alpha&l_0\end{bmatrix}\begin{bmatrix}V_y\\V_x\\\omega\end{bmatrix}\]
 总的来说，麦克纳姆轮转向具有高效率、高灵活性的特点。
 \begin{figure}[ht]
   \centering
@@ -637,18 +637,29 @@ F_req2&=\frac n2k\left(\frac1{\rho(q,q_g)}-\frac1{\rho_0}\right)^2\rho_g^{n-1}
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 % \usepackage{graphicx}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage{graphicx}
+% Please add the following required packages to your document preamble:
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage{graphicx}
 \begin{table}[ht]
 \centering
-\resizebox{0.5\textwidth}{!}{%
-\begin{tabular}{@{}|c|c|c|@{}}
-\toprule
-姓名  & 主要负责内容                                              & 辅助内容                                                              \\ \midrule
-邱璟祎 & \begin{tabular}[c]{@{}c@{}}循迹算法\\ 蓝牙模块\end{tabular} & \begin{tabular}[c]{@{}c@{}}车体设计\\ 夹取设计\\ 避障算法\\ 其他驱动\end{tabular} \\ \midrule
-周俊豪 & \begin{tabular}[c]{@{}c@{}}避障算法\\ 车体设计\\ IMU\end{tabular} & \begin{tabular}[c]{@{}c@{}}夹取设计\\ 循迹算法\\ 避障算法\\ 其他驱动\end{tabular} \\ \midrule
-张峻瑜 & \begin{tabular}[c]{@{}c@{}}夹取设计\\ 电机驱动\end{tabular} & \begin{tabular}[c]{@{}c@{}}车体设计\\ 循迹算法\\ 避障算法\\ 其他驱动\end{tabular} \\ \bottomrule
+\resizebox{0.8\textwidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+姓名                   & 主要负责内容 & 辅助内容                                                                           \\ \hline
+\multirow{2}{*}{邱璟祎} & 循迹算法   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}车体设计，夹取设计\\ 避障算法，其他驱动\end{tabular}} \\ \cline{2-2}
+                     & 蓝牙模块   &                                                                                \\ \hline
+\multirow{3}{*}{周俊豪} & 避障算法   & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}夹取设计，循迹算法\\ 避障算法，其他驱动\end{tabular}} \\ \cline{2-2}
+                     & 车体设计   &                                                                                \\ \cline{2-2}
+                     & IMU    &                                                                                \\ \hline
+\multirow{2}{*}{张峻瑜} & 夹取设计   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}车体设计，循迹算法\\ 避障算法，其他驱动\end{tabular}} \\ \cline{2-2}
+                     & 电机驱动   &                                                                                \\ \hline
 \end{tabular}%
 }
-\caption{人员分工}
+\caption{人员分工表}
 \label{tab:my-table}
 \end{table}
 \newpage
@@ -657,27 +668,35 @@ F_req2&=\frac n2k\left(\frac1{\rho(q,q_g)}-\frac1{\rho_0}\right)^2\rho_g^{n-1}
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 % \usepackage{graphicx}
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
 \begin{table}[ht]
 \centering
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}|c|c|@{}}
+\begin{tabular}{@{}cc@{}}
 \toprule
 时间节点        & 阶段任务                        \\ \midrule
-7月9日-7月11日  & 进一步完善详细设计方案，采购零件，编写部分硬件单元代码 \\ \midrule
-7月11日-7月15日 & 加工零部件，组装小车硬件，编写部分硬件单元代码     \\ \midrule
-7月15日-7月17日 & 单元控制代码编写，完成硬件测试             \\ \midrule
-7月17日-7月22日 & 完成单元控制代码编写和单元测试             \\ \midrule
-7月22日-7月24日 & 软件集成，硬件通讯部分代码编写与调试          \\ \midrule
-7月24日-7月25日 & 自动抓取货物与放置货物集成调试与细节优化        \\ \midrule
-7月26日-7月27日 & 循迹模式小车运动集成调试与细节优化           \\ \midrule
-7月27日-7月28日 & 避障模式小车运动集成调试与细节优化           \\ \midrule
+7月9日-7月11日  & 进一步完善详细设计方案，采购零件，编写部分硬件单元代码 \\
+7月11日-7月15日 & 加工零部件，组装小车硬件，编写部分硬件单元代码     \\
+7月15日-7月17日 & 单元控制代码编写，完成硬件测试             \\
+7月17日-7月22日 & 完成单元控制代码编写和单元测试             \\
+7月22日-7月24日 & 软件集成，硬件通讯部分代码编写与调试          \\
+7月24日-7月25日 & 自动抓取货物与放置货物集成调试与细节优化        \\
+7月26日-7月27日 & 循迹模式小车运动集成调试与细节优化           \\
+7月27日-7月28日 & 避障模式小车运动集成调试与细节优化           \\
 7月28日-7月29日 & 小车整体最终调试，准备比赛               \\ \bottomrule
 \end{tabular}%
 }
-\caption{}
+\caption{进度控制表}
 \label{tab:my-table}
 \end{table}
-
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
