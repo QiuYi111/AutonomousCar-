@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.13)  8 JUL 2024 09:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.13)  8 JUL 2024 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -618,6 +618,18 @@ LaTeX Warning: Label `subsec:label' multiply defined.
 
 LaTeX Warning: Label `sec:label' multiply defined.
 
+
+LaTeX Warning: Label `sec:label' multiply defined.
+
+
+LaTeX Warning: Label `tab:my-table' multiply defined.
+
+
+LaTeX Warning: Label `sec:label' multiply defined.
+
+
+LaTeX Warning: Label `tab:my-table' multiply defined.
+
 )
 \openout1 = `LiteratureReview.aux'.
 
@@ -792,79 +804,115 @@ Chapter 2.
 
 ] [5]
 Chapter 3.
+
+Overfull \hbox (12.89212pt too wide) in paragraph at lines 94--95
+\C70/rm/m/n/10.53937/68 8 \C70/rm/m/n/10.53937/5f Ã \C70/rm/m/n/10.53937/52 Ÿ \
+C70/rm/m/n/10.53937/80 ý \C70/rm/m/n/10.53937/66 / \C70/rm/m/n/10.53937/90 ^^Z 
+\C70/rm/m/n/10.53937/8f Ç \C70/rm/m/n/10.53937/4e ^^@ * \C70/rm/m/n/10.53937/62
+ ^^V \C70/rm/m/n/10.53937/59 ^^Z \C70/rm/m/n/10.53937/4e * \C70/rm/m/n/10.53937
+/8f n \C70/rm/m/n/10.53937/5b P ž \C70/rm/m/n/10.53937/73 ° \C70/rm/m/n/10.5393
+7/8f f † \C70/rm/m/n/10.53937/76 „ \C70/rm/m/n/10.53937/79 û \C70/rm/m/n/10.539
+37/52 ¨|\C70/rm/m/n/10.53937/30 ^^B| \C70/rm/m/n/10.53937/8f Ù \C70/rm/m/n/10.5
+3937/79 Í \C70/rm/m/n/10.53937/8b ¾ ¡ \C70/rm/m/n/10.53937/53 ï \C70/rm/m/n/10.
+53937/4e å \C70/rm/m/n/10.53937/91 Ç \C70/rm/m/n/10.53937/75 ( \C70/rm/m/n/10.5
+3937/68 ^^G \C70/rm/m/n/10.53937/51 Æ \C70/rm/m/n/10.53937/76 „ \C70/rm/m/n/10.
+53937/8f n \C70/rm/m/n/10.53937/80 Î \C70/rm/m/n/10.53937/62 ^^V \C70/rm/m/n/10
+.53937/70 u \C70/rm/m/n/10.53937/6d ; \C70/rm/m/n/10.53937/76 „ \C70/rm/m/n/10.
+53937/51 h \C70/rm/m/n/10.53937/65 ¹ \C70/rm/m/n/10.53937/4f M \C70/rm/m/n/10.5
+3937/8f n |\C70/rm/m/n/10.53937/ff ^^H|\OT1/cmr/m/n/10.53937 Omni-
+ []
+
 [6
 
 ]
-<figures/chasu.png, id=207, 174.762pt x 121.8735pt>
+<figures/chasu.png, id=209, 174.762pt x 121.8735pt>
 File: figures/chasu.png Graphic file (type png)
 <use figures/chasu.png>
-Package pdftex.def Info: figures/chasu.png  used on input line 102.
+Package pdftex.def Info: figures/chasu.png  used on input line 120.
 (pdftex.def)             Requested size: 239.00406pt x 166.68486pt.
  [7 <./figures/chasu.png>]
-<figures/mac.png, id=221, 196.48407pt x 160.34906pt>
+Overfull \hbox (6.57993pt too wide) in paragraph at lines 124--125
+[]$\OML/cmm/m/it/10.53937 []$\C70/rm/m/n/10.53937/54 Œ$\OML/cmm/m/it/10.53937 
+[]$\C70/rm/m/n/10.53937/52 ^^F + \C70/rm/m/n/10.53937/4e : \C70/rm/m/n/10.5393
+7/52 M \C70/rm/m/n/10.53937/5d æ \C70/rm/m/n/10.53937/8f n \C70/rm/m/n/10.53937
+/54 Œ ^^N \C70/rm/m/n/10.53937/5d æ \C70/rm/m/n/10.53937/8f n|\C70/rm/m/n/10.53
+937/ff ^^L| \C70/rm/m/n/10.53937/52 M \C70/rm/m/n/10.53937/53 ó \C70/rm/m/n/10.
+53937/8f n \C70/rm/m/n/10.53937/54 Œ \C70/rm/m/n/10.53937/53 ó \C70/rm/m/n/10.5
+3937/8f n \C70/rm/m/n/10.53937/76 „ \C70/rm/m/n/10.53937/8f l \C70/rm/m/n/10.53
+937/89 Ò|\C70/rm/m/n/10.53937/ff ^^[| \OT1/cmr/m/n/10.53937 2L \C70/rm/m/n/10.5
+3937/4e : \C70/rm/m/n/10.53937/5d æ \C70/rm/m/n/10.53937/53 ó \C70/rm/m/n/10.53
+937/8f n \C70/rm/m/n/10.53937/8d Ý \C70/rm/m/n/10.53937/79 »|\C70/rm/m/n/10.539
+37/ff ^^[|  \OT1/cmr/m/n/10.53937 2K \C70/rm/m/n/10.53937/4e : \C70/rm/m/n/10.5
+3937/52 M \C70/rm/m/n/10.53937/54 ^^N \C70/rm/m/n/10.53937/8f n t \C70/rm/m/n/1
+0.53937/8d Ý|\C70/rm/m/n/10.53937/ff ^^[| $\OML/cmm/m/it/10.53937 v$\C70/rm/m/n
+/10.53937/54 Œ$\OML/cmm/m/it/10.53937 !$\C70/rm/m/n/10.53937/52 ^^F
+ []
+
+[8]
+<figures/mac.png, id=229, 196.48407pt x 160.34906pt>
 File: figures/mac.png Graphic file (type png)
 <use figures/mac.png>
-Package pdftex.def Info: figures/mac.png  used on input line 136.
+Package pdftex.def Info: figures/mac.png  used on input line 160.
 (pdftex.def)             Requested size: 239.00406pt x 195.0628pt.
- [8 <./figures/mac.png>] [9]
+ [9 <./figures/mac.png>] [10]
 <figures/sensor.jpg, id=244, 3011.25pt x 4015.0pt>
 File: figures/sensor.jpg Graphic file (type jpg)
 <use figures/sensor.jpg>
-Package pdftex.def Info: figures/sensor.jpg  used on input line 164.
+Package pdftex.def Info: figures/sensor.jpg  used on input line 202.
 (pdftex.def)             Requested size: 239.00406pt x 318.63348pt.
- [10 <./figures/sensor.jpg>]
-<figures/straight.png, id=253, 115.02975pt x 102.98476pt>
+ [11 <./figures/sensor.jpg>]
+<figures/straight.png, id=254, 115.02975pt x 102.98476pt>
 File: figures/straight.png Graphic file (type png)
 <use figures/straight.png>
-Package pdftex.def Info: figures/straight.png  used on input line 187.
+Package pdftex.def Info: figures/straight.png  used on input line 230.
 (pdftex.def)             Requested size: 143.40388pt x 128.40216pt.
-<figures/left.png, id=254, 121.6545pt x 109.00725pt>
+<figures/left.png, id=255, 121.6545pt x 109.00725pt>
 File: figures/left.png Graphic file (type png)
 <use figures/left.png>
-Package pdftex.def Info: figures/left.png  used on input line 194.
+Package pdftex.def Info: figures/left.png  used on input line 237.
 (pdftex.def)             Requested size: 143.40388pt x 128.50932pt.
-<figures/right.png, id=255, 124.0635pt x 105.39375pt>
+<figures/right.png, id=256, 124.0635pt x 105.39375pt>
 File: figures/right.png Graphic file (type png)
 <use figures/right.png>
-Package pdftex.def Info: figures/right.png  used on input line 201.
+Package pdftex.def Info: figures/right.png  used on input line 244.
 (pdftex.def)             Requested size: 143.40388pt x 121.82422pt.
-<figures/jumpscan.png, id=256, 128.27925pt x 113.82526pt>
+ [12 <./figures/straight.png> <./figures/left.png> <./figures/right.png>]
+<figures/jumpscan.png, id=271, 128.27925pt x 113.82526pt>
 File: figures/jumpscan.png Graphic file (type png)
 <use figures/jumpscan.png>
-Package pdftex.def Info: figures/jumpscan.png  used on input line 214.
+Package pdftex.def Info: figures/jumpscan.png  used on input line 263.
 (pdftex.def)             Requested size: 191.20032pt x 169.67276pt.
-<figures/pooling.png, id=257, 638.385pt x 376.40625pt>
+<figures/pooling.png, id=272, 638.385pt x 376.40625pt>
 File: figures/pooling.png Graphic file (type png)
 <use figures/pooling.png>
-Package pdftex.def Info: figures/pooling.png  used on input line 221.
+Package pdftex.def Info: figures/pooling.png  used on input line 270.
 (pdftex.def)             Requested size: 191.20032pt x 112.7332pt.
- [11 <./figures/straight.png> <./figures/left.png> <./figures/right.png>]
-<figures/state.png, id=269, 414.69214pt x 298.54393pt>
+ [13 <./figures/jumpscan.png> <./figures/pooling.png>]
+<figures/state.png, id=279, 414.69214pt x 298.54393pt>
 File: figures/state.png Graphic file (type png)
 <use figures/state.png>
-Package pdftex.def Info: figures/state.png  used on input line 235.
+Package pdftex.def Info: figures/state.png  used on input line 284.
 (pdftex.def)             Requested size: 239.00406pt x 172.06229pt.
-[12 <./figures/jumpscan.png> <./figures/pooling.png> <./figures/state.png>]
-<figures/hongwaibizhang.png, id=278, 186.6975pt x 234.1247pt>
+ [14 <./figures/state.png>]
+<figures/hongwaibizhang.png, id=288, 186.6975pt x 234.1247pt>
 File: figures/hongwaibizhang.png Graphic file (type png)
 <use figures/hongwaibizhang.png>
-Package pdftex.def Info: figures/hongwaibizhang.png  used on input line 257.
+Package pdftex.def Info: figures/hongwaibizhang.png  used on input line 310.
 (pdftex.def)             Requested size: 239.00406pt x 299.73216pt.
-
-[13 <./figures/hongwaibizhang.png>]
-<figures/super.png, id=285, 401.24907pt x 240.14719pt>
+ [15 <./figures/hongwaibizhang.png>]
+<figures/super.png, id=293, 401.24907pt x 240.14719pt>
 File: figures/super.png Graphic file (type png)
 <use figures/super.png>
-Package pdftex.def Info: figures/super.png  used on input line 270.
+Package pdftex.def Info: figures/super.png  used on input line 324.
 (pdftex.def)             Requested size: 239.00406pt x 143.04506pt.
- [14 <./figures/super.png>] [15]
-<figures/yichuan.png, id=299, 201.75375pt x 150.5625pt>
+ [16 <./figures/super.png>] [17] [18]
+<figures/yichuan.png, id=312, 201.75375pt x 150.5625pt>
 File: figures/yichuan.png Graphic file (type png)
 <use figures/yichuan.png>
-Package pdftex.def Info: figures/yichuan.png  used on input line 327.
+Package pdftex.def Info: figures/yichuan.png  used on input line 397.
 (pdftex.def)             Requested size: 239.00406pt x 178.3629pt.
 
-Overfull \hbox (0.62852pt too wide) in paragraph at lines 324--330
+Overfull \hbox (0.62852pt too wide) in paragraph at lines 394--400
  \C70/rm/bx/n/10.53937/90 W \C70/rm/bx/n/10.53937/4f   \C70/rm/bx/n/10.53937/7b
  — \C70/rm/bx/n/10.53937/6c Õ[] \C70/rm/m/n/10.53937/90 W \C70/rm/m/n/10.53937/
 4f   \C70/rm/m/n/10.53937/7b — \C70/rm/m/n/10.53937/6c Õ |\C70/rm/m/n/10.53937/
@@ -880,46 +928,64 @@ ff ^^H|\OT1/cmr/m/n/10.53937 GA|\C70/rm/m/n/10.53937/ff 	| \C70/rm/m/n/10.53937
 0.53937/76 „ \OT1/cmr/m/n/10.53937 [11]|\C70/rm/m/n/10.53937/30 ^^B|
  []
 
-[16 <./figures/yichuan.png>]
-<figures/yiqun.png, id=305, 212.795pt x 188.20313pt>
+<figures/yiqun.png, id=313, 212.795pt x 188.20313pt>
 File: figures/yiqun.png Graphic file (type png)
 <use figures/yiqun.png>
-Package pdftex.def Info: figures/yiqun.png  used on input line 336.
+Package pdftex.def Info: figures/yiqun.png  used on input line 406.
 (pdftex.def)             Requested size: 239.00406pt x 211.39485pt.
- [17 <./figures/yiqun.png>]
-<figures/APF.png, id=311, 203.25937pt x 175.15437pt>
+[19 <./figures/yichuan.png> <./figures/yiqun.png>]
+<figures/APF.png, id=320, 203.25937pt x 175.15437pt>
 File: figures/APF.png Graphic file (type png)
 <use figures/APF.png>
-Package pdftex.def Info: figures/APF.png  used on input line 363.
+Package pdftex.def Info: figures/APF.png  used on input line 432.
 (pdftex.def)             Requested size: 239.00406pt x 205.9641pt.
- [18 <./figures/APF.png>] [19]
+ [20] [21 <./figures/APF.png>] [22]
 Chapter 4.
-<figures/body.jpg, id=321, 1132.23pt x 969.6225pt>
+<figures/body.jpg, id=332, 1132.23pt x 969.6225pt>
 File: figures/body.jpg Graphic file (type jpg)
 <use figures/body.jpg>
-Package pdftex.def Info: figures/body.jpg  used on input line 398.
+Package pdftex.def Info: figures/body.jpg  used on input line 468.
 (pdftex.def)             Requested size: 239.00406pt x 204.67719pt.
-<figures/pickup.png, id=322, 193.47281pt x 116.68594pt>
+
+Overfull \hbox (5.983pt too wide) in paragraph at lines 465--471
+\C70/rm/m/n/10.53937/53 ^^E \C70/rm/m/n/10.53937/62 ì \C70/rm/m/n/10.53937/4f F
+ \C70/rm/m/n/10.53937/4e ^^M \C70/rm/m/n/10.53937/96 P \C70/rm/m/n/10.53937/4e 
+Ž\OT1/cmr/m/n/10.53937 STM32\C70/rm/m/n/10.53937/5f ® \C70/rm/m/n/10.53937/63 §
+ \C70/rm/m/n/10.53937/52 6 \C70/rm/m/n/10.53937/56 h|\C70/rm/m/n/10.53937/30 ^^
+A| \C70/rm/m/n/10.53937/75 5 \C70/rm/m/n/10.53937/53 ‹ \C70/rm/m/n/10.53937/8f 
+l \C70/rm/m/n/10.53937/63 b \C70/rm/m/n/10.53937/6a ! \C70/rm/m/n/10.53937/57 W
+|\C70/rm/m/n/10.53937/30 ^^A| \C70/rm/m/n/10.53937/84 Ý \C70/rm/m/n/10.53937/72
+ Y \C70/rm/m/n/10.53937/90 ^^Z \C70/rm/m/n/10.53937/4f á \C70/rm/m/n/10.53937/6
+a ! \C70/rm/m/n/10.53937/57 W \C70/rm/m/n/10.53937/4e å \C70/rm/m/n/10.53937/53
+ Ê \C70/rm/m/n/10.53937/8d … \C70/rm/m/n/10.53937/58 ð \C70/rm/m/n/10.53937/6c 
+â \C70/rm/m/n/10.53937/4f   \C70/rm/m/n/10.53937/61 ^^_ \C70/rm/m/n/10.53937/56
+ h \C70/rm/m/n/10.53937/7b I|\C70/rm/m/n/10.53937/30 ^^B| \C70/rm/m/n/10.53937/
+4e : † \C70/rm/m/n/10.53937/63 Ð \C70/rm/m/n/10.53937/53 G\OT1/cmr/m/n/10.53937
+ OpenMV\C70/rm/m/n/10.53937/64 D
+ []
+
+[23
+
+ <./figures/body.jpg>]
+<figures/pickup.png, id=336, 193.47281pt x 116.68594pt>
 File: figures/pickup.png Graphic file (type png)
 <use figures/pickup.png>
-Package pdftex.def Info: figures/pickup.png  used on input line 406.
+Package pdftex.def Info: figures/pickup.png  used on input line 478.
 (pdftex.def)             Requested size: 239.00406pt x 144.14778pt.
-[20
-
- <./figures/body.jpg>] [21 <./figures/pickup.png>] [22] [23]
-<figures/hc-05.png, id=338, 552.0625pt x 393.47pt>
+ [24 <./figures/pickup.png>] [25] [26]
+<figures/hc-05.png, id=348, 552.0625pt x 393.47pt>
 File: figures/hc-05.png Graphic file (type png)
 <use figures/hc-05.png>
-Package pdftex.def Info: figures/hc-05.png  used on input line 478.
+Package pdftex.def Info: figures/hc-05.png  used on input line 556.
 (pdftex.def)             Requested size: 239.00406pt x 170.34753pt.
- [24 <./figures/hc-05.png>]
-<figures/ui.jpg, id=345, 1372.12625pt x 1084.05pt>
+ [27 <./figures/hc-05.png>]
+<figures/ui.jpg, id=354, 1372.12625pt x 1084.05pt>
 File: figures/ui.jpg Graphic file (type jpg)
 <use figures/ui.jpg>
-Package pdftex.def Info: figures/ui.jpg  used on input line 487.
+Package pdftex.def Info: figures/ui.jpg  used on input line 567.
 (pdftex.def)             Requested size: 239.00406pt x 188.81836pt.
 
-Overfull \hbox (9.49611pt too wide) in paragraph at lines 500--501
+Overfull \hbox (9.49611pt too wide) in paragraph at lines 583--584
 []\C70/rm/m/n/10.53937/90 	 \C70/rm/m/n/10.53937/62 é \C70/rm/m/n/10.53937/4f ^
 ^? \C70/rm/m/n/10.53937/75 (\OT1/cmr/m/n/10.53937 PWM\C70/rm/m/n/10.53937/65 ¹ 
 \C70/rm/m/n/10.53937/6c Õ \C70/rm/m/n/10.53937/9a q \C70/rm/m/n/10.53937/52 ¨|\
@@ -936,13 +1002,18 @@ C70/rm/m/n/10.53937/ff ^^L| \C70/rm/m/n/10.53937/5e v \C70/rm/m/n/10.53937/75 (
 7 PID\C70/rm/m/n/10.53937/5b ž
  []
 
-[25 <./figures/ui.jpg>] (LiteratureReview.bbl [26]) [27
+[28 <./figures/ui.jpg>] [29] [30]
+Chapter 5.
+[31
+
+] (LiteratureReview.bbl [32]) [33
 
 ] (LiteratureReview.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
+
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
@@ -952,13 +1023,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 10563 strings out of 474370
- 186678 string characters out of 5754668
- 1958754 words of memory out of 5000000
- 32384 multiletter control sequences out of 15000+600000
- 650221 words of font info for 346 fonts, out of 8000000 for 9000
+ 10643 strings out of 474370
+ 188157 string characters out of 5754668
+ 1964754 words of memory out of 5000000
+ 32455 multiletter control sequences out of 15000+600000
+ 652470 words of font info for 354 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,12n,83p,1171b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,17n,83p,1030b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/s
 imkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS
 /Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:
@@ -966,49 +1037,49 @@ imkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS
 .ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Font
 s/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WIND
 OWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf>
-<C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/sim
-sun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/F
-onts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/W
+<C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/sim
+hei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/F
+onts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/W
 INDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.t
-tf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/
-simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOW
+tf> <C:\CTEX\UserData\fonts/pk/ljfour/jknappen/ec/dpi632\tcrm1000.pk><C:/WINDOW
 S/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C
-:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhe
-i.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fon
-ts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WIN
-DOWS/Fonts/simhei.ttf> <C:\CTEX\UserData\fonts/pk/ljfour/jknappen/ec/dpi632\tcr
-m1000.pk><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/
+:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhe
+i.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fon
+ts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WIN
+DOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf
+><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/si
+msun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/
 Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/
 WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.
-ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts
-/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDO
+ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts
+/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDO
 WS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><
-C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simh
-ei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fo
-nts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WI
-NDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.tt
-c><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/s
+C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/sims
+un.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fo
+nts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WI
+NDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.tt
+c><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/s
 imsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS
 /Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:
-/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun
-.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Font
-s/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WIND
-OWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf>
-<C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/sim
+/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei
+.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Font
+s/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WIND
+OWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf>
+<C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/sim
 sun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/F
 onts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/W
 INDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.t
 tc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/
-simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOW
+simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOW
 S/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C
-:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsu
+:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsu
 n.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fon
 ts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WIN
 DOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc
 ><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/si
-mhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/
+msun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/
 Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/
-WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.
+WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.
 ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts
 /simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDO
 WS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><
@@ -1017,21 +1088,21 @@ un.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fo
 nts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WI
 NDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.tt
 c><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/s
-imsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/CTEX/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/CTEX/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10
-.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/CTEX/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/CTEX/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmmi7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/CTEX/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmr5.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/CTEX/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-
-Output written on LiteratureReview.pdf (28 pages, 4414839 bytes).
+imsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS
+/Fonts/simsun.ttc><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:
+/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/CTEX/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/CTEX/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/CTEX/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.
+pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/CTEX/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr9.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/CTE
+X/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/CTEX/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb>
+Output written on LiteratureReview.pdf (34 pages, 4459872 bytes).
 PDF statistics:
- 912 PDF objects out of 1000 (max. 8388607)
+ 936 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 407 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 411 words of extra memory for PDF output out of 10000 (max. 10000000)
 
