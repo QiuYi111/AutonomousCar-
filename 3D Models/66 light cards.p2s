@@ -1,0 +1,34 @@
+lighting custom
+"overhead light.p2l"
+shadow 
+transparent 0 0 
+environment 
+showroom 
+north nonvisible nonreflective "Materials\plastic\high gloss\default plastic.p2m"
+without_mapping
+south nonvisible nonreflective "Materials\plastic\high gloss\default plastic.p2m"
+without_mapping	
+east nonvisible nonreflective "Materials\plastic\high gloss\default plastic.p2m"
+without_mapping 
+west nonvisible nonreflective "Materials\plastic\high gloss\default plastic.p2m"
+without_mapping 
+ceiling nonvisible nonreflective "Materials\plastic\high gloss\default plastic.p2m"
+without_mapping 
+floor visible reflective "Materials\miscellaneous\studio materials\reflective shadow floor.p2m"
+without_mapping
+end_textures
+offset 0.0
+end_positions
+model xz_plane
+background
+image "Images\textures\background\rooftopsunrise.png"
+none
+background_environment
+image "images\textures\background\hdr_studio.hdr"
+spherical_env
+environment_multipliers 0.8 0.7
+sw_scene_rotating_envmap 1
+pv_background_image_brightness 1.0 
+pv_rendering_brightness 1.0 
+pv_scene_reflectivity 1.0
+end
