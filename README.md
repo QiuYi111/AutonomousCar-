@@ -8,3 +8,5 @@ git 官方中文教程 https://git-scm.com/book/zh/v2
 
 STM32 油管系列教程
 [![STM32教程](https://res.cloudinary.com/marcomontalbano/image/upload/v1720400916/video_to_markdown/images/youtube--Hffw-m9fuxc-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=Hffw-m9fuxc "STM32教程")
+
+电气原理图绘制工具 https://www.diagrams.net/index.html
