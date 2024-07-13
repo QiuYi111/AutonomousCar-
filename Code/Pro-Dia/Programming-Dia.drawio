@@ -1,0 +1,193 @@
+<mxfile host="Electron" modified="2024-07-12T08:22:26.690Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="7UTaBVN70EF-0c_Ynhbm" version="24.6.4" type="device">
+  <diagram name="第 1 页" id="9_EqQd2KuYK-e6GB3c_H">
+    <mxGraphModel dx="1815" dy="1739" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-1" target="CQzF-rpY8_h7Dh5WwFVb-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-87" value="占空比" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-86">
+          <mxGeometry x="0.1643" y="3" relative="1" as="geometry">
+            <mxPoint x="3" y="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-1" value="PID轮速控制&lt;div&gt;PID.h&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="295" y="340" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-78" value="障碍物距离" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-2" target="CQzF-rpY8_h7Dh5WwFVb-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-2" value="超声波测距&lt;div&gt;uSonic.h&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="95" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-4" value="电机PWM&lt;div&gt;motor.h&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="295" y="200" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-6" value="舵机PWM&lt;div&gt;servo.h&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="300" y="-160" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-20" target="CQzF-rpY8_h7Dh5WwFVb-95">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-102" value="编码信号" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-101">
+          <mxGeometry x="0.069" y="1" relative="1" as="geometry">
+            <mxPoint x="1" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-20" value="电机编码器驱动程序&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="385" y="791.82" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-88" value="各轮速度" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-32" target="CQzF-rpY8_h7Dh5WwFVb-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-32" target="CQzF-rpY8_h7Dh5WwFVb-70">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="560" />
+              <mxPoint x="70" y="195" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-120" value="偏航角&lt;div&gt;里程&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-119">
+          <mxGeometry x="0.0798" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-32" target="CQzF-rpY8_h7Dh5WwFVb-114">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-124" value="运动数据&lt;div&gt;TX&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-123">
+          <mxGeometry x="0.1222" y="1" relative="1" as="geometry">
+            <mxPoint x="-5" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-32" value="运动监测模块" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="490" width="420" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-34" value="IMU驱动程序&lt;div&gt;imu.h&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="175" y="712.38" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-66" value="黑线斜率" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-68" target="CQzF-rpY8_h7Dh5WwFVb-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-67" value="识别目标点" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-68" target="CQzF-rpY8_h7Dh5WwFVb-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-68" value="OpenMV&lt;div&gt;图像处理&lt;/div&gt;&lt;div&gt;Cv.py&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="295" y="90" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-69" target="CQzF-rpY8_h7Dh5WwFVb-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-83" value="运动指令" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-80">
+          <mxGeometry x="0.5481" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-69" value="循迹&lt;div&gt;lineFol.h&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="15" width="80" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-70" target="CQzF-rpY8_h7Dh5WwFVb-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-82" value="运动指令" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-79">
+          <mxGeometry x="0.324" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-70" value="避障&lt;div&gt;avoidObs.h&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="15" width="80" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-71" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="CQzF-rpY8_h7Dh5WwFVb-70">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="134.76" as="sourcePoint" />
+            <mxPoint x="395" y="134.76" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-72" value="识别终点" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="CQzF-rpY8_h7Dh5WwFVb-71">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-76" value="控制" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-73" target="CQzF-rpY8_h7Dh5WwFVb-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-73" value="夹取&lt;div&gt;grab.h&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="-40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.679;entryY=0.983;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="205.17999999999984" y="630.0000000000003" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-91" value="加速度&lt;div&gt;TX&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-90">
+          <mxGeometry x="-0.3321" y="-1" relative="1" as="geometry">
+            <mxPoint x="-2" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.821;entryY=1.021;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="264.82000000000016" y="635.32" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-93" value="偏航角&lt;div&gt;TX&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-92">
+          <mxGeometry x="-0.0193" y="1" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-95" value="里程计&lt;div&gt;travelDis.h&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="385" y="691.82" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.32;entryY=0.987;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-95">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="474.39999999999964" y="630.0000000000003" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-97" value="里程" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-96">
+          <mxGeometry x="-0.0055" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.179;entryY=1.007;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-95">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415.17999999999984" y="632.8000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-99" value="速度" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-98">
+          <mxGeometry x="-0.0365" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-111" value="PC/Mobile" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="660" y="370" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-114" target="CQzF-rpY8_h7Dh5WwFVb-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="540" />
+              <mxPoint x="600" y="408" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-126" value="运动指令&lt;div&gt;TX&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-125">
+          <mxGeometry x="0.5867" relative="1" as="geometry">
+            <mxPoint x="70" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-114" value="蓝牙&lt;div&gt;blueTooth.h&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="520" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-116" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="CQzF-rpY8_h7Dh5WwFVb-114" target="CQzF-rpY8_h7Dh5WwFVb-111">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="705" y="520" as="sourcePoint" />
+            <mxPoint x="935" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CQzF-rpY8_h7Dh5WwFVb-117" value="信息传递" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="CQzF-rpY8_h7Dh5WwFVb-116">
+          <mxGeometry x="0.0871" y="2" relative="1" as="geometry">
+            <mxPoint x="1" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
