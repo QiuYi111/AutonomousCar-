@@ -1,0 +1,5 @@
+../Core/Src/sonic.c:8:6:sonic_delay	2
+../Core/Src/sonic.c:13:5:get_distance1	1
+../Core/Src/sonic.c:29:5:get_distance2	1
+../Core/Src/sonic.c:45:5:get_distance3	1
+../Core/Src/sonic.c:61:5:get_distance4	1

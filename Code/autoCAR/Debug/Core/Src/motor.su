@@ -1,0 +1,7 @@
+../Core/Src/motor.c:11:6:setLeftRpm	24	static
+../Core/Src/motor.c:16:6:setRightRpm	24	static
+../Core/Src/motor.c:21:6:setPID	16	static
+../Core/Src/motor.c:26:5:pidDiff	32	static
+../Core/Src/motor.c:37:7:getRpm	24	static
+../Core/Src/motor.c:44:6:setPWM	24	static
+../Core/Src/motor.c:50:6:setDirection	16	static

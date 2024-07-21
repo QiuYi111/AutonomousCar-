@@ -1,0 +1,6 @@
+../Core/Src/motor.c:11:6:motor_init	1
+../Core/Src/motor.c:20:6:motor_PWM	9
+../Core/Src/motor.c:59:5:motor_leftfeedback	1
+../Core/Src/motor.c:68:5:motor_rightfeedback	1
+../Core/Src/motor.c:77:5:leftspeedPID	1
+../Core/Src/motor.c:90:5:rightspeedPID	1

@@ -23,16 +23,19 @@ led3=pyb.LED(3)
 def Receive_Prepare1(data):
     global state
     global MODE
+#检验帧头
     if state==0:
         if data == 0xb3:
             state = 1
         else:
             state = 0
             rx_buff.clear()
+#将数据写入MODE变量
     elif state==1:
         MODE=data
         print(MODE)
         state = 2
+#数据校验位
     elif state == 2:
         if data == 0xb4:
             state = 3
@@ -97,8 +100,8 @@ while(True):
                     max_blob=find_max(blobs)
                     img.draw_rectangle(max_blob.rect())#框选最大色块
                     img.draw_cross(max_blob.cx(), max_blob.cy())#在最大色块中心画十字
-                    pcx = max_blob.cx()-79.5 #定义pcx为最大色块中心的横坐标
-                    pcy = 119-max_blob.cy()
+                    #pcx = max_blob.cx()-79.5 #定义pcx为最大色块中心的横坐标
+                    #pcy = 119-max_blob.cy()
                     if pcy>90:
                         dev_s1=90
                     else:

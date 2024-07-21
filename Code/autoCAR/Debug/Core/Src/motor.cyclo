@@ -1,0 +1,7 @@
+../Core/Src/motor.c:11:6:setLeftRpm	1
+../Core/Src/motor.c:16:6:setRightRpm	1
+../Core/Src/motor.c:21:6:setPID	4
+../Core/Src/motor.c:26:5:pidDiff	1
+../Core/Src/motor.c:37:7:getRpm	1
+../Core/Src/motor.c:44:6:setPWM	6
+../Core/Src/motor.c:50:6:setDirection	5

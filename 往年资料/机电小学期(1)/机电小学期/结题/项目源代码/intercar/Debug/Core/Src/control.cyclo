@@ -1,0 +1,8 @@
+../Core/Src/control.c:10:6:setspeed	5
+../Core/Src/control.c:24:8:roundPID	1
+../Core/Src/control.c:36:6:spin	8
+../Core/Src/control.c:62:6:groundturn	1
+../Core/Src/control.c:69:6:fetchplace	3
+../Core/Src/control.c:94:6:alongside	3
+../Core/Src/control.c:105:6:avoidance	80
+../Core/Src/control.c:243:6:avoid_stop	1

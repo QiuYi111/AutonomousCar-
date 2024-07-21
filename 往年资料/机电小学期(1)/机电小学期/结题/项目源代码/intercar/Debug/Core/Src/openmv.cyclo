@@ -1,0 +1,4 @@
+../Core/Src/openmv.c:10:6:Openmv_Receive_Data	12
+../Core/Src/openmv.c:58:6:extract_MVRX1	5
+../Core/Src/openmv.c:69:6:extract_MVRX2	5
+../Core/Src/openmv.c:82:6:extract_MVRX3	7
