@@ -6,32 +6,43 @@
  */
 #include "motor.h"
 
-float kp,ki,kd;
-float leftError,rightError;
+float kp=0.8,ki=0,kd=0.5;int pulseLeft=0;int pulseRight=0;
+float leftError=0,rightError=0;float error_last_left = 0,error_before_left= 0;float error_last_right = 0,error_before_right = 0;
 void setLeftRpm(float rpm){
 	float currentRpm=getRpm(&htim2);
-	int pulse=0;pulse+=pidDiff(rpm, currentRpm, &leftError);
-	setPWM(pulse,TIM_CHANNEL_3);
+	pulseLeft+=pidDiffLeft(rpm, currentRpm, &leftError);
+	setPWM(pulseLeft,TIM_CHANNEL_3);
 }
 void setRightRpm(float rpm){
-	float currentRpm=getRpm(&htim2);
-	int pulse=0;pulse+=pidDiff(rpm, currentRpm, &rightError);
-	setPWM(pulse,TIM_CHANNEL_4);
+	float currentRpm=getRpm(&htim4);
+	pulseRight+=pidDiffRight(rpm, currentRpm, &rightError);
+	setPWM(pulseRight,TIM_CHANNEL_4);
 }
 void setPID(char factor,float index){
 	if (factor=='p'){kp=index;}
 	else if (factor=='i'){ki=index;}
 	else if (factor=='d'){kd=index;};
 }
-int pidDiff(float target,float present,float * erro){
+int pidDiffLeft(float target,float present,float * erro){
 	float error = target - present;
-		static int error_last = 0,error_before = 0;
+
 		float pwm_pid=0;
 		*erro = error;
-		pwm_pid = kp*(error- error_last)+ki* error
-				+kd*( error-2* error_last+ error_before);
-		 error_before =  error_last;	  	    // 保存上上次误差
-		 error_last =  error;	              // 保存上次偏差
+		pwm_pid = kp*(error- error_last_left)+ki* error
+				+kd*( error-2* error_last_left+ error_before_left);
+		 error_before_left =  error_last_left;	  	    // 保存上上次误差
+		 error_last_left =  error;	              // 保存上次偏差
+		 return (int)pwm_pid;
+}
+int pidDiffRight(float target,float present,float * erro){
+	float error = target - present;
+
+		float pwm_pid=0;
+		*erro = error;
+		pwm_pid = kp*(error- error_last_right)+ki* error
+				+kd*( error-2* error_last_right+ error_before_right);
+		 error_before_right =  error_last_right;	  	    // 保存上上次误差
+		 error_last_right =  error;	              // 保存上次偏差
 		 return (int)pwm_pid;
 }
 float getRpm(TIM_HandleTypeDef * htim){
@@ -43,7 +54,7 @@ float getRpm(TIM_HandleTypeDef * htim){
 }
 void setPWM(int pulse,uint32_t channel){
 	int pwm_pulse;
-	if(pulse>0){pwm_pulse=pulse;}else{pwm_pulse=-pulse;};
+	if(pulse>0){pwm_pulse=pulse;}else{pwm_pulse=0;};
 	if(pwm_pulse>=255){pwm_pulse=255;};
 	__HAL_TIM_SET_COMPARE(&htim5,channel,pwm_pulse);
 }

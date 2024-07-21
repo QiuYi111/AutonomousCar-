@@ -1,0 +1,133 @@
+/*
+ * callBacks.c
+ *
+ *  Created on: Jul 21, 2024
+ *      Author: 25138
+ */
+#include "main.h"
+#include "usart.h"
+#include "tim.h"
+#include "motor.h"
+#include <math.h>
+#include <string.h>
+extern uint8_t rxData[50];
+extern float rpmLeft,rpmRight;//定义在main里的，用于存放rpm数据
+extern int pulseLeft,pulseRight;float currentLeft,currentRight;
+int float_to_uint8_arry(uint8_t* u8Arry, float floatdata, int precision) {//float给定精度转换为uint8_t
+	int points = 0;
+	float data1 = floatdata;
+	for (; data1 >=1; points++) {
+		data1 /= 10;
+	}
+	for (int i = 0; i < precision; i++) {
+		floatdata *= 10;
+	}
+	for (int i = 0; i < points + precision + 1; i++) {
+		if (i != precision) {
+			if (i == 0) {
+				u8Arry[points + precision - i] = (uint8_t)((floor(fmod(floatdata, 10) + 0.5)) + '0');
+				floatdata /= 10;
+			}
+			else {
+				u8Arry[points + precision - i] = (uint8_t)((floor(fmod(floatdata, 10))) + '0');
+				floatdata /= 10;
+			}
+		}
+		else {
+			u8Arry[points] = '.';
+		}
+	}
+	return points + precision + 1;
+
+}
+
+
+// Function to convert uint8_t array to float
+float uint8_to_float(uint8_t* u8arry, int point_length) {
+	int points = 0;
+	int status = 0;
+	int num_length = 0;
+	float number = 0;
+	for (; num_length < 256; num_length++) {
+		if (u8arry[num_length] == '.') {
+			points = num_length;
+		}
+		if (u8arry[num_length] == 'o') {
+			status = num_length;
+			break;
+		}
+	}
+	if (status == 0) {
+		return -1;
+	}
+	else {
+		float tens = 1;
+
+		if (points == 0) {
+			for (size_t i= 0; i < num_length; i++) {
+			number += (float)(u8arry[i] - '0');
+			number *= 10;
+		}
+			}
+			else {
+				for (int i = 0; i <= points + point_length; i++) {
+				if (i < points) {
+					number += (float)(u8arry[i] - '0');
+					number *= 10;
+				}
+				else if (i > points) {
+					tens /= 10;
+					number += ((float)(u8arry[i] - '0')) * tens;
+				}
+				else {
+					number /= 10;
+				}
+				}
+			}
+
+		if (points == 0) {
+			number /= 10;
+		}
+		return number;
+	}
+
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	 if (htim==&htim7){
+		 setLeftRpm(rpmLeft);
+		 setRightRpm(rpmRight);
+
+		 currentLeft=getRpm(&htim2);
+		currentRight=getRpm(&htim4);
+	}
+
+}
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//需要在main里启动接收函数
+	if(huart==&huart5){
+		if (rxData[0]=='w'||rxData[0]=='s'||rxData[0]=='b'||rxData[0]=='a'){//数据形式应该是“w1000”这样的
+		setDirection(rxData[0]);
+		rpmLeft=uint8_to_float(rxData+1,0);
+		rpmRight=uint8_to_float(rxData+1,0);
+		}else if (rxData[0]=='p'){//数据形式应该是"p0.5"这样的
+			kp=uint8_to_float(rxData+1,2);
+		}else if (rxData[0]=='i'){
+			ki=uint8_to_float(rxData+1,2);
+		}else if (rxData[0]=='d'){
+			kd=uint8_to_float(rxData+1,2);
+		}else if (rxData[0]=='q'){
+			HAL_GPIO_WritePin(IN1_GPIO_Port, IN1_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(IN2_GPIO_Port, IN2_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(IN3_GPIO_Port, IN3_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(IN4_GPIO_Port, IN4_Pin, GPIO_PIN_RESET);
+		}
+		uint8_t message[]="Order Received!";
+		//float_to_uint8_arry(message,pulseLeft,0);
+		//float_to_uint8_arry(message+4,pulseRight,0);
+		HAL_UART_Transmit_IT(&huart5, message, sizeof message);
+	}
+
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxData, sizeof rxData);
+}
+
+

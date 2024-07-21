@@ -15,7 +15,8 @@ extern "C" {
 extern float kp,ki,kd,erro;
 void setLeftRpm(float rpm);
 void setRightRpm(float rpm);
-int pidDiff(float target,float present,float * erro);
+int pidDiffLeft(float target,float present,float * erro);
+int pidDiffRight(float target,float present,float * erro);
 float getRpm(TIM_HandleTypeDef * htim);
 void setPWM(int pulse,uint32_t channel);
 void setSpeed(int pulse);

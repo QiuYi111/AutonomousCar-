@@ -18,12 +18,16 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "motor.h"
+#include "ultraSonic.h"
+#include "timersInit.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,7 +48,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+float rpmRight=0,rpmLeft=0;
+uint8_t rxData[50];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -87,13 +92,17 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_TIM2_Init();
   MX_TIM4_Init();
   MX_TIM5_Init();
-  MX_TIM6_Init();
   MX_TIM1_Init();
+  MX_UART5_Init();
+  MX_UART4_Init();
+  MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
-
+  timersInit();
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxData, sizeof rxData);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -154,13 +163,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	 if (htim==&htim6){
-		 setLeftRpm(100);
-		 setRightRpm(100);
-	}
 
-}
 /* USER CODE END 4 */
 
 /**
