@@ -90,7 +90,8 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM4_Init();
   MX_TIM5_Init();
-  MX_TIM8_Init();
+  MX_TIM6_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -154,7 +155,7 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	 if (htim==&htim8){
+	 if (htim==&htim6){
 		 setLeftRpm(100);
 		 setRightRpm(100);
 	}

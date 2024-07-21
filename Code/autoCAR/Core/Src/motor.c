@@ -7,15 +7,15 @@
 #include "motor.h"
 
 float kp,ki,kd;
-float error;
+float leftError,rightError;
 void setLeftRpm(float rpm){
 	float currentRpm=getRpm(&htim2);
-	int pulse=0;pulse+=pidDiff(rpm, currentRpm, &erro);
+	int pulse=0;pulse+=pidDiff(rpm, currentRpm, &leftError);
 	setPWM(pulse,TIM_CHANNEL_3);
 }
 void setRightRpm(float rpm){
 	float currentRpm=getRpm(&htim2);
-	int pulse=0;pulse+=pidDiff(rpm, currentRpm, &erro);
+	int pulse=0;pulse+=pidDiff(rpm, currentRpm, &rightError);
 	setPWM(pulse,TIM_CHANNEL_4);
 }
 void setPID(char factor,float index){
