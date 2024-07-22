@@ -13,9 +13,12 @@
 extern uint8_t rxData[50];
 extern float rpmLeft,rpmRight;//定义在main里的，用于存放rpm数据
 extern int pulseLeft,pulseRight;
- float kp=7,ki=0,kd=0; int pulseLeft=0;int pulseRight=0;
+ float kp=1,ki=0.5,kd=1.5; int pulseLeft=0;int pulseRight=0;
 float leftError=0,rightError=0; float error_last_left = 0,error_before_left= 0;float error_last_right = 0,error_before_right = 0;
-
+uint8_t cRt[256]={};
+int delayer=0;
+float currentRpm_left=0;
+float currentRpm_right=0;
 int float_to_uint8_arry(uint8_t* u8Arry, float floatdata, int precision) {//float给定精度转换为uint8_t
 	int points = 0;
 	float data1 = floatdata;
@@ -100,6 +103,20 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	 if (htim==&htim7){
 		 setRightRpm(rpmRight);
 		 setLeftRpm(rpmLeft);
+	}else if (htim ==&htim9){
+		//currentRpm_left=getLeftRpm(&htim2);
+		//currentRpm_right=getRightRpm(&htim4);
+		int right_Rpm_length=0,left_Rpm_length=0;
+		cRt[0]='l';
+		cRt[1]=':';
+		left_Rpm_length=float_to_uint8_arry(cRt+2, currentRpm_left, 2);
+		cRt[left_Rpm_length+3]=' ';
+		cRt[left_Rpm_length+4]='r';
+		cRt[left_Rpm_length+5]=':';
+		right_Rpm_length=float_to_uint8_arry(cRt+left_Rpm_length+6, currentRpm_right, 2);
+		cRt[left_Rpm_length+6+right_Rpm_length]='\n';
+		HAL_UART_Transmit_DMA(&huart5, cRt, sizeof cRt);
+
 	}
 
 }
@@ -129,11 +146,12 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//需�
 		//float_to_uint8_arry(message,pulseLeft,0);
 		//float_to_uint8_arry(message+4,pulseRight,0);
 		HAL_UART_Transmit_DMA(&huart5, message, sizeof message);
+		memset(rxData,0,sizeof rxData);
+		rxData[0]=0;
+		leftError=0;rightError=0;error_last_left = 0;error_before_left= 0;error_last_right = 0;error_before_right = 0;
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxData, sizeof rxData);
 	}
-	memset(rxData,0,sizeof rxData);
-	rxData[0]=0;
-	leftError=0;rightError=0;error_last_left = 0;error_before_left= 0;error_last_right = 0;error_before_right = 0;
-	HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxData, sizeof rxData);
+
 }
 
 

@@ -12,15 +12,16 @@ uint16_t count_num_left_past=-1;
 uint16_t count_num_right_past=-1;
 extern int countnum_rightcircuance;
 extern int countnum_leftcircuance;
+extern float currentRpm_left,currentRpm_right;
 void setLeftRpm(float rpm){
-	float currentRpm=getLeftRpm(&htim2);
-	pulseLeft+=pidDiffLeft(rpm, currentRpm, &leftError);
-	setLeftPWM(pulseLeft,TIM_CHANNEL_3);
+	 currentRpm_left=getLeftRpm(&htim2);
+	pulseLeft+=pidDiffLeft(rpm, currentRpm_left,&leftError);
+
 }
 void setRightRpm(float rpm){
-	float currentRpm=getRightRpm(&htim4);
-	pulseRight+=pidDiffRight(rpm, currentRpm, &rightError);
-	setRightPWM(pulseRight,TIM_CHANNEL_4);
+	currentRpm_right=getRightRpm(&htim4);
+	pulseRight+=pidDiffRight(rpm, currentRpm_right,&rightError);
+
 }
 void setPID(char factor,float index){
 	if (factor=='p'){kp=index;}
