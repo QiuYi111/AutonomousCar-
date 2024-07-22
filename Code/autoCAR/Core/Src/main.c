@@ -28,6 +28,9 @@
 #include "motor.h"
 #include "ultraSonic.h"
 #include "timersInit.h"
+#include "string.h"
+extern int float_to_uint8_arry(uint8_t* u8Arry, float floatdata, int precision);
+extern float uint8_to_float(uint8_t* u8arry, int point_length);
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,6 +53,9 @@
 /* USER CODE BEGIN PV */
 float rpmRight=0,rpmLeft=0;
 uint8_t rxData[50];
+int countnum_rightcircuance=0;
+int countnum_leftcircuance=0;
+float currentLeft=0,currentRight=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -100,15 +106,37 @@ int main(void)
   MX_UART5_Init();
   MX_UART4_Init();
   MX_TIM7_Init();
+  MX_TIM3_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
+  	/*HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_ALL);//�???启电机PWM，最�???255
+  	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_ALL);//�???启舵机PWM，最�???1999
+  	HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);//左轮编码�???
+  	HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);//右轮编码�???
+  	HAL_TIM_Base_Start_IT(&htim7);//中断定时器，50ms�???次中�???*/
   timersInit();
+  __HAL_TIM_SET_COUNTER(&htim2,32768);
+   __HAL_TIM_SET_COUNTER(&htim4,32768);
   HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxData, sizeof rxData);
+  uint8_t cRt[256]={};
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  currentLeft=getLeftRpm(&htim2);
+	  currentRight=getRightRpm(&htim4);
+	  memset(cRt,0,sizeof cRt);
+	  cRt[0]='r';
+	  int p= float_to_uint8_arry(cRt+1, currentRight, 2);
+	  cRt[p+3]=' ';
+	  cRt[p+4]='l';
+	  int pm=float_to_uint8_arry(cRt+p+5, currentLeft, 2);
+	  cRt[p+pm+9]='\n';
+	  HAL_UART_Transmit_DMA(&huart5, cRt, sizeof rxData);
+	  HAL_Delay(1000);
+	  memset(cRt,0,sizeof cRt);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -12,7 +12,10 @@
 #include <string.h>
 extern uint8_t rxData[50];
 extern float rpmLeft,rpmRight;//定义在main里的，用于存放rpm数据
-extern int pulseLeft,pulseRight;float currentLeft,currentRight;
+extern int pulseLeft,pulseRight;
+ float kp=7,ki=0,kd=0; int pulseLeft=0;int pulseRight=0;
+float leftError=0,rightError=0; float error_last_left = 0,error_before_left= 0;float error_last_right = 0,error_before_right = 0;
+
 int float_to_uint8_arry(uint8_t* u8Arry, float floatdata, int precision) {//float给定精度转换为uint8_t
 	int points = 0;
 	float data1 = floatdata;
@@ -95,39 +98,42 @@ float uint8_to_float(uint8_t* u8arry, int point_length) {
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	 if (htim==&htim7){
-		 setLeftRpm(rpmLeft);
 		 setRightRpm(rpmRight);
-
-		 currentLeft=getRpm(&htim2);
-		currentRight=getRpm(&htim4);
+		 setLeftRpm(rpmLeft);
 	}
 
 }
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//需要在main里启动接收函数
 	if(huart==&huart5){
-		if (rxData[0]=='w'||rxData[0]=='s'||rxData[0]=='b'||rxData[0]=='a'){//数据形式应该是“w1000”这样的
+		if (rxData[0]=='w'||rxData[0]=='s'||rxData[0]=='d'||rxData[0]=='a'){//数据形式应该是“w1000”这样的
 		setDirection(rxData[0]);
 		rpmLeft=uint8_to_float(rxData+1,0);
 		rpmRight=uint8_to_float(rxData+1,0);
-		}else if (rxData[0]=='p'){//数据形式应该是"p0.5"这样的
+		}else if (rxData[0]=='P'){//数据形式应该是"p0.5"这样的
 			kp=uint8_to_float(rxData+1,2);
-		}else if (rxData[0]=='i'){
+		}else if (rxData[0]=='I'){
 			ki=uint8_to_float(rxData+1,2);
-		}else if (rxData[0]=='d'){
+		}else if (rxData[0]=='D'){
 			kd=uint8_to_float(rxData+1,2);
 		}else if (rxData[0]=='q'){
-			HAL_GPIO_WritePin(IN1_GPIO_Port, IN1_Pin, GPIO_PIN_RESET);
+			rpmLeft=0;
+			rpmRight=0;
+			//memset(rxData,0,sizeof rxData);
+			//rxData[0]=0;
+			/*HAL_GPIO_WritePin(IN1_GPIO_Port, IN1_Pin, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(IN2_GPIO_Port, IN2_Pin, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(IN3_GPIO_Port, IN3_Pin, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(IN4_GPIO_Port, IN4_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(IN4_GPIO_Port, IN4_Pin, GPIO_PIN_RESET);*/
 		}
 		uint8_t message[]="Order Received!";
 		//float_to_uint8_arry(message,pulseLeft,0);
 		//float_to_uint8_arry(message+4,pulseRight,0);
-		HAL_UART_Transmit_IT(&huart5, message, sizeof message);
+		HAL_UART_Transmit_DMA(&huart5, message, sizeof message);
 	}
-
-		HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxData, sizeof rxData);
+	memset(rxData,0,sizeof rxData);
+	rxData[0]=0;
+	leftError=0;rightError=0;error_last_left = 0;error_before_left= 0;error_last_right = 0;error_before_right = 0;
+	HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxData, sizeof rxData);
 }
 
 
