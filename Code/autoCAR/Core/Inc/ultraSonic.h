@@ -15,8 +15,15 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-uint16_t MeasureDistance(TIM_HandleTypeDef TIMER, GPIO_TypeDef* TRIG_PORT, uint16_t TRIG_PIN, GPIO_TypeDef* ECHO_PORT, uint16_t ECHO_PIN);
+typedef struct{
+	GPIO_TypeDef* Trig_PORT;
+	uint16_t Trig_PIN;
+	GPIO_TypeDef* Echo_PORT;
+	uint16_t Echo_PIN;
+}ultraSonic;
+extern  ultraSonic ultraSonicFront, ultraSonicLeft, ultraSonicRight;
+extern uint16_t  distanceLeft,distanceRight,distanceFront;
+uint16_t MeasureDistance(ultraSonic * ultraSonicInst);
 
 #ifdef __cplusplus
 }

@@ -10,20 +10,26 @@
 #include "motor.h"
 #include <math.h>
 #include <string.h>
+#include "ultraSonic.h"
 extern uint8_t rxData[50];
 extern float rpmLeft,rpmRight;//定义在main里的，用于存放rpm数据
 extern int pulseLeft,pulseRight;
- float kp=1,ki=0.5,kd=1.5; int pulseLeft=0;int pulseRight=0;
+float kp=1,ki=0.5,kd=1.5; int pulseLeft=0;int pulseRight=0;
 float leftError=0,rightError=0; float error_last_left = 0,error_before_left= 0;float error_last_right = 0,error_before_right = 0;
 uint8_t cRt[256]={};
 int delayer=0;
 float currentRpm_left=0;
-float currentRpm_right=0;
+float currentRpm_right=0;int ultraLoop=0;
 int float_to_uint8_arry(uint8_t* u8Arry, float floatdata, int precision) {//float给定精度转换为uint8_t
 	int points = 0;
+	int apoints = 0;
 	float data1 = floatdata;
-	for (; data1 >=1; points++) {
+	for (; data1 >= 1; points++) {
 		data1 /= 10;
+	}
+	if (points == 0) {
+		points = 1;
+		apoints = 1;
 	}
 	for (int i = 0; i < precision; i++) {
 		floatdata *= 10;
@@ -39,14 +45,23 @@ int float_to_uint8_arry(uint8_t* u8Arry, float floatdata, int precision) {//floa
 				floatdata /= 10;
 			}
 		}
-		else {
+		else if(precision!=0){
 			u8Arry[points] = '.';
 		}
+
 	}
-	return points + precision + 1;
+	if (apoints == 1) {
+		points = 0;
+		return points + precision + 2;
+	}
+	else if(precision==0){
+		return points + precision;
+	}
+	else {
+		return points + precision + 1;
+	}
 
 }
-
 
 // Function to convert uint8_t array to float
 float uint8_to_float(uint8_t* u8arry, int point_length) {
@@ -103,20 +118,43 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	 if (htim==&htim7){
 		 setRightRpm(rpmRight);
 		 setLeftRpm(rpmLeft);
-	}else if (htim ==&htim9){
+		 /*if (ultraLoop==0){
+			 distanceFront=MeasureDistance(&ultraSonicFront);
+			 ultraLoop++;
+		 }else if(ultraLoop==1){
+			 distanceLeft=MeasureDistance(&ultraSonicLeft);
+			 ultraLoop++;
+		 }else if (ultraLoop==2){
+			 distanceRight=MeasureDistance(&ultraSonicRight);
+			 ultraLoop=0;
+		 }*/
+	}else if (htim ==&htim12){
 		//currentRpm_left=getLeftRpm(&htim2);
 		//currentRpm_right=getRightRpm(&htim4);
-		int right_Rpm_length=0,left_Rpm_length=0;
-		cRt[0]='l';
-		cRt[1]=':';
-		left_Rpm_length=float_to_uint8_arry(cRt+2, currentRpm_left, 2);
-		cRt[left_Rpm_length+3]=' ';
-		cRt[left_Rpm_length+4]='r';
-		cRt[left_Rpm_length+5]=':';
-		right_Rpm_length=float_to_uint8_arry(cRt+left_Rpm_length+6, currentRpm_right, 2);
-		cRt[left_Rpm_length+6+right_Rpm_length]='\n';
-		HAL_UART_Transmit_DMA(&huart5, cRt, sizeof cRt);
+		int right_Rpm_length = 0, left_Rpm_length = 0;
+		cRt[0] = 'l';
+		cRt[1] = ':';
+		left_Rpm_length = float_to_uint8_arry(cRt + 2, currentRpm_left, 2);
+		cRt[left_Rpm_length + 2] = ' ';
+		cRt[left_Rpm_length + 3] = 'r';
+		cRt[left_Rpm_length + 4] = ':';
+		right_Rpm_length = float_to_uint8_arry(cRt + left_Rpm_length + 5, currentRpm_right, 2);
+		cRt[left_Rpm_length + right_Rpm_length + 5] = '\n';
 
+		int distanceFront_length = 0, distanceLeft_length = 0, distanceRight_length = 0;
+		cRt[left_Rpm_length + right_Rpm_length + 6] = 'F';
+		cRt[left_Rpm_length + right_Rpm_length + 7] = ':';
+		distanceFront_length = float_to_uint8_arry(cRt + left_Rpm_length + right_Rpm_length + 8, (float)distanceFront, 3);
+		cRt[distanceFront_length + left_Rpm_length + right_Rpm_length + 8] = '\n';
+		cRt[distanceFront_length + left_Rpm_length + right_Rpm_length + 9] = 'L';
+		cRt[distanceFront_length + left_Rpm_length + right_Rpm_length + 10] = ':';
+		distanceLeft_length = float_to_uint8_arry(cRt + distanceFront_length + left_Rpm_length + right_Rpm_length + 11, (float)distanceLeft, 2);
+		cRt[distanceLeft_length + distanceFront_length + left_Rpm_length + right_Rpm_length + 11] = '\n';
+		cRt[distanceLeft_length + distanceFront_length + left_Rpm_length + right_Rpm_length + 12] = 'R';
+		cRt[distanceLeft_length + distanceFront_length + left_Rpm_length + right_Rpm_length + 13] = ':';
+		distanceRight_length = float_to_uint8_arry(cRt + distanceLeft_length + distanceFront_length + left_Rpm_length + right_Rpm_length + 14, (float)distanceRight, 2);
+		cRt[distanceRight_length + distanceLeft_length + distanceFront_length + left_Rpm_length + right_Rpm_length + 14] = '\n';
+		HAL_UART_Transmit_DMA(&huart5, cRt, sizeof cRt);
 	}
 
 }

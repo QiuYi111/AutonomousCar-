@@ -57,6 +57,8 @@ int countnum_rightcircuance=0;
 int countnum_leftcircuance=0;
 float currentLeft=0,currentRight=0;
 extern int pulseLeft,pulseRight;
+extern int ultraLoop;
+extern uint8_t cRt[256];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -110,13 +112,14 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM8_Init();
   MX_TIM6_Init();
-  MX_TIM9_Init();
+  MX_TIM10_Init();
+  MX_TIM12_Init();
   /* USER CODE BEGIN 2 */
-  	/*HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_ALL);//�?????启电机PWM，最�?????255
-  	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_ALL);//�?????启舵机PWM，最�?????1999
-  	HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);//左轮编码�?????
-  	HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);//右轮编码�?????
-  	HAL_TIM_Base_Start_IT(&htim7);//中断定时器，50ms�?????次中�?????*/
+  	/*HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_ALL);//�??????????启电机PWM，最�??????????255
+  	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_ALL);//�??????????启舵机PWM，最�??????????1999
+  	HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);//左轮编码�??????????
+  	HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);//右轮编码�??????????
+  	HAL_TIM_Base_Start_IT(&htim7);//中断定时器，50ms�??????????次中�??????????*/
   timersInit();
   __HAL_TIM_SET_COUNTER(&htim2,32768);
    __HAL_TIM_SET_COUNTER(&htim4,32768);
@@ -130,6 +133,15 @@ int main(void)
   {
 	  setLeftPWM(pulseLeft,TIM_CHANNEL_3);
 	  setRightPWM(pulseRight,TIM_CHANNEL_4);
+	  if (ultraLoop==0){
+	  	distanceFront=MeasureDistance(&ultraSonicFront);
+	  }else if(ultraLoop==1){
+	  	 distanceLeft=MeasureDistance(&ultraSonicLeft);
+	  }else if (ultraLoop==2){
+	  	 distanceRight=MeasureDistance(&ultraSonicRight);
+}
+	  if (ultraLoop<3){ultraLoop++;}
+	  else{ultraLoop=0;}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
