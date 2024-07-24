@@ -1,0 +1,12 @@
+../Core/Src/servo.c:19:7:Servo_turn	88	static
+../Core/Src/servo.c:103:7:Servo1_init	24	static
+../Core/Src/servo.c:110:7:Servo1_craw	24	static
+../Core/Src/servo.c:116:7:Servo1_put	24	static
+../Core/Src/servo.c:123:7:Servo2_init	24	static
+../Core/Src/servo.c:130:7:Servo2_driving	24	static
+../Core/Src/servo.c:136:7:Servo2_puting	24	static
+../Core/Src/servo.c:143:7:Servo3_init	24	static
+../Core/Src/servo.c:150:7:Servo3_driving	24	static
+../Core/Src/servo.c:156:7:Servo3_puting	24	static
+../Core/Src/servo.c:162:7:craw_up_trail	24	static
+../Core/Src/servo.c:176:7:put_down_trail	24	static

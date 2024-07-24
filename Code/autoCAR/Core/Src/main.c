@@ -29,6 +29,7 @@
 #include "ultraSonic.h"
 #include "timersInit.h"
 #include "string.h"
+#include "servo.h"
 extern int float_to_uint8_arry(uint8_t* u8Arry, float floatdata, int precision);
 extern float uint8_to_float(uint8_t* u8arry, int point_length);
 /* USER CODE END Includes */
@@ -51,14 +52,16 @@ extern float uint8_to_float(uint8_t* u8arry, int point_length);
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-float rpmRight=0,rpmLeft=0;
-uint8_t rxData[50];
+float rpmRight=0,rpmLeft=0,deriSpeed=0,centralSpeed;
+uint8_t rxDataBT[50];
+uint8_t rxDataOp[50];
 int countnum_rightcircuance=0;
 int countnum_leftcircuance=0;
 float currentLeft=0,currentRight=0;
 extern int pulseLeft,pulseRight;
 extern int ultraLoop;
 extern uint8_t cRt[256];
+float craw_state=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -115,15 +118,38 @@ int main(void)
   MX_TIM10_Init();
   MX_TIM12_Init();
   /* USER CODE BEGIN 2 */
-  	/*HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_ALL);//�??????????启电机PWM，最�??????????255
-  	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_ALL);//�??????????启舵机PWM，最�??????????1999
-  	HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);//左轮编码�??????????
-  	HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);//右轮编码�??????????
-  	HAL_TIM_Base_Start_IT(&htim7);//中断定时器，50ms�??????????次中�??????????*/
+  	/*HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_ALL);//�???????????????启电机PWM，最�???????????????255
+  	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_ALL);//�???????????????启舵机PWM，最�???????????????1999
+  	HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);//左轮编码�???????????????
+  	HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);//右轮编码�???????????????
+  	HAL_TIM_Base_Start_IT(&htim7);//中断定时器，50ms�???????????????次中�???????????????*/
+
+
+  //turning_theta_Servo2=Servo2_init(turning_theta_Servo2);
+
+  //turning_theta_Servo2=Servo2_puting(turning_theta_Servo2);
+
+  //turning_theta_Servo1=Servo1_craw(turning_theta_Servo1);
+
+  //turning_theta_Servo2=Servo2_driving(turning_theta_Servo2);
+
+
+
+  /*turning_theta_Servo3=Servo3_init(turning_theta_Servo3);*/
   timersInit();
   __HAL_TIM_SET_COUNTER(&htim2,32768);
    __HAL_TIM_SET_COUNTER(&htim4,32768);
-  HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxData, sizeof rxData);
+   //float turning_theta_Servo1=50;
+   //float turning_theta_Servo2=25;
+  // float turning_theta_Servo3=55;
+   //turning_theta_Servo1=Servo1_init(turning_theta_Servo1);
+   //turning_theta_Servo2=Servo2_init(turning_theta_Servo2);
+
+   //craw_up_trail(1);
+
+   //put_down_trail(1);
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxDataBT, sizeof rxDataBT);
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart4, rxDataOp, sizeof rxDataOp);
 
   /* USER CODE END 2 */
 
@@ -133,6 +159,12 @@ int main(void)
   {
 	  setLeftPWM(pulseLeft,TIM_CHANNEL_3);
 	  setRightPWM(pulseRight,TIM_CHANNEL_4);
+	  /*
+	  turning_theta_Servo1=Servo1_craw(turning_theta_Servo1);
+	  turning_theta_Servo2=Servo2_driving(turning_theta_Servo2);
+	  turning_theta_Servo1=Servo1_put(turning_theta_Servo1);
+	  turning_theta_Servo2=Servo2_puting(turning_theta_Servo2);                                                                                                                                                                                                                                  	  setLeftPWM(pulseLeft,TIM_CHANNEL_3);
+	  setRightPWM(pulseRight,TIM_CHANNEL_4);*/
 	  if (ultraLoop==0){
 	  	distanceFront=MeasureDistance(&ultraSonicFront);
 	  }else if(ultraLoop==1){
