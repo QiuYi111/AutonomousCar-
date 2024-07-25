@@ -131,7 +131,8 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//需�
 		    case 's':
 		    case 'd':
 		    case 'a': //数据形式应该是“w1000”这样的
-
+		    	//memset(rxDataOp,0,sizeof rxDataOp);
+		    	//centralSpeed=deriSpeed=0;
 		        setDirection(rxDataBT[0]);
 		        rpmLeft = uint8_to_float(rxDataBT + 1, 0);
 		        rpmRight = uint8_to_float(rxDataBT + 1, 0);
@@ -147,7 +148,8 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//需�
 		        kd = uint8_to_float(rxDataBT + 1, 2);
 		        break;*/
 		    case 'q':
-
+		    	memset(rxDataOp,0,sizeof rxDataOp);
+		    	centralSpeed=deriSpeed=0;
 		    	rpmLeft=0;
 		    	rpmRight=0;
 		    	mode=0;
@@ -159,6 +161,8 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//需�
 		        craw_state = 2;
 		        break;
 		    case 'l':
+		    	//memset(rxDataOp,0,sizeof rxDataOp);
+		    	//centralSpeed=deriSpeed=0;
 		        setDirection('w');
 		        centralSpeed = uint8_to_float(rxDataBT + 1, 0);
 		        rpmLeft=rpmRight=centralSpeed;
@@ -213,7 +217,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//需�
 		leftError=0;rightError=0;error_last_left = 0;error_before_left= 0;error_last_right = 0;error_before_right = 0;
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxDataBT, sizeof rxDataBT);
 	}else if (huart==&huart4){
-		if (mode==1){
+		if (mode==1&&(currentRpm_left>=10||currentRpm_right>=10)){
 		int i=0;
 		for(;i < sizeof rxDataOp;i++){
 			if(rxDataOp[i]=='x'){
@@ -221,11 +225,11 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//需�
 			}
 		}
 		deriSpeed=uint8_to_float(rxDataOp+i+1,0);
-		if (deriSpeed>0.9*centralSpeed){
+		if (deriSpeed>centralSpeed){
 
-			deriSpeed=0.9*centralSpeed;
-		}else if (deriSpeed<-0.9*centralSpeed){
-			deriSpeed=-0.9*centralSpeed;
+			deriSpeed=centralSpeed;
+		}else if (deriSpeed<-centralSpeed){
+			deriSpeed=-centralSpeed;
 		}
 		rpmLeft=centralSpeed+deriSpeed;
 		rpmRight=centralSpeed-deriSpeed;

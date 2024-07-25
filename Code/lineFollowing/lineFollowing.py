@@ -29,12 +29,12 @@ tim1.callback(tick1)
 tim2=Timer(2,freq=170)
 tim2.callback(tick2)
 positionError=positionErrorLast=positionErrorBefore=0
-positionKp=60
-positionKi=1
+positionKp=53.5
+positionKi=1.75
 positionKd=1
 angelError=angelErrorLast=angelErrorBefore=0
-angelKp=60
-angelKi=1
+angelKp=53.5
+angelKi=1.75
 angelKd=1
 def positionPid(present):
     global positionError,positionErrorLast,positionErrorBefore,positionKp,positionKi,positionKd
@@ -54,7 +54,7 @@ def angelPid(present):
 deriSpeed=0
 sensor.reset()
 sensor.set_vflip(True)
-sensor.set_hmirror(True)
+sensor.set_hmirror(False)
 sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QQQVGA) # 80x60 (4,800 pixels) - O(N^2) max = 2,3040,000.
 #sensor.set_windowing([0,20,80,40])
@@ -64,7 +64,7 @@ LED(1).on
 while(True):
     clock.tick()
 
-    img = sensor.snapshot().binary([THRESHOLD])
+    img = sensor.snapshot().binary([THRESHOLD]).lens_corr(strength = 1.8, zoom = 1.0)
 
     img.invert()
     '''
