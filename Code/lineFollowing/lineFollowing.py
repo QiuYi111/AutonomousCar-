@@ -88,8 +88,8 @@ while(True):
     line1 = img.get_regression([(100,100)], robust = True)
     line2=img.get_regression([(100,100)], robust = True)
 '''
-    line1 = img.get_regression([(100, 100)], roi=(0, 0, img.width() // 2, img.height()), robust=True)
-    line2 = img.get_regression([(100, 100)], roi=(img.width() // 2, 0, img.width() // 2, img.height()), robust=True)
+    line1 = img.get_regression([(100, 100)], roi=(0, img.height()//2, img.width() // 2, img.height()), robust=True)
+    line2 = img.get_regression([(100, 100)], roi=(img.width() // 2, img.height()//2, img.width() // 2, img.height()), robust=True)
 
     if line1 and line2 and line1.magnitude() > 8 and line2.magnitude() > 8:
            # 计算两条线的中点
@@ -118,6 +118,11 @@ while(True):
                LED(2).toggle()
                #print(sumDeriSpeed,deriSpeed,cnt)
                #print(transmit)
+    elif line1 and line1.magnitude()>8 and not line2:
+        uart.write("x30o")
+    elif line2 and line2.magnitude()>8 and not line1:
+        uart.write("x-30o")
+
 
 
 
