@@ -4,7 +4,7 @@ class PID:
     #target=0
    # erro = lastError = beforeError = 0
 
-    def __init__(self,p=0,i=0,d=0):
+    def __init__(self,p,i,d,t):
         self.kp = float(p)
         self.ki = float(i)
         self.kd = float(d)

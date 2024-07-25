@@ -1,5 +1,6 @@
 "./Core/Src/callBacks.o"
 "./Core/Src/dma.o"
+"./Core/Src/float_uint8.o"
 "./Core/Src/gpio.o"
 "./Core/Src/main.o"
 "./Core/Src/motor.o"

@@ -24,6 +24,7 @@ void setRightPWM(int pulse,uint32_t channel);
 void setSpeed(int pulse);
 void setPID(char factor,float index);
 void setDirection(char dir);
+void setSpin(int angel,char dir);
 #ifdef __cplusplus
 }
 #endif

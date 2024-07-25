@@ -8,3 +8,4 @@
 ../Core/Src/motor.c:102:6:setRightPWM	24	static
 ../Core/Src/motor.c:108:6:setLeftPWM	24	static
 ../Core/Src/motor.c:115:6:setDirection	16	static
+../Core/Src/motor.c:141:6:setSpin	16	static

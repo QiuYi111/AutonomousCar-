@@ -6,7 +6,7 @@
  */
 #include "motor.h"
 
-extern float kp,ki,kd;extern int pulseLeft,pulseRight;
+extern float kp,ki,kd,rpmLeft,rpmRight;extern int pulseLeft,pulseRight;extern int spin,preScaller,dt;
 extern float leftError,rightError, error_last_left ,error_before_left, error_last_right ,error_before_right ;
 uint16_t count_num_left_past=-1;
 uint16_t count_num_right_past=-1;
@@ -137,4 +137,17 @@ void setDirection(char dir){
 		HAL_GPIO_WritePin(IN3_GPIO_Port, IN3_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(IN4_GPIO_Port, IN4_Pin, GPIO_PIN_RESET);
 	}
+}
+void setSpin(int angel,char dir){
+
+	if (dir=='A'){
+		spin=1;
+		setDirection('a');
+	}else if (dir=='D'){
+		spin=1;
+		setDirection('d');
+	}
+	rpmLeft=rpmRight=50;
+	dt=0.0141*angel;
+
 }

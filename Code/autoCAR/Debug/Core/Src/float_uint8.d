@@ -1,4 +1,5 @@
-Core/Src/callBacks.o: ../Core/Src/callBacks.c ../Core/Inc/main.h \
+Core/Src/float_uint8.o: ../Core/Src/float_uint8.c \
+ ../Core/Inc/float_uint8.h ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -26,11 +27,8 @@ Core/Src/callBacks.o: ../Core/Src/callBacks.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/usart.h ../Core/Inc/main.h ../Core/Inc/tim.h \
- ../Core/Inc/motor.h ../Core/Inc/tim.h ../Core/Inc/ultraSonic.h \
- ../Core/Inc/servo.h ../Core/Inc/gpio.h ../Core/Inc/stm32f4xx_hal_conf.h \
- ../Core/Inc/stm32f4xx_it.h ../Core/Inc/float_uint8.h
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+../Core/Inc/float_uint8.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -60,14 +58,3 @@ Core/Src/callBacks.o: ../Core/Src/callBacks.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-../Core/Inc/usart.h:
-../Core/Inc/main.h:
-../Core/Inc/tim.h:
-../Core/Inc/motor.h:
-../Core/Inc/tim.h:
-../Core/Inc/ultraSonic.h:
-../Core/Inc/servo.h:
-../Core/Inc/gpio.h:
-../Core/Inc/stm32f4xx_hal_conf.h:
-../Core/Inc/stm32f4xx_it.h:
-../Core/Inc/float_uint8.h:

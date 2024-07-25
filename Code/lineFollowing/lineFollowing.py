@@ -1,8 +1,10 @@
 THRESHOLD = (41, 100, -128, 127, -128, 127)
 greyThre=(122, 255)# Grayscale threshold for dark things...
 import sensor, image, time
-from pyb import UART,Timer
+from pyb import UART,Timer,LED
 uart = UART(3, 19200)
+cnt=0
+sumDeriSpeed=0
 flag=0
 '''
 from pid import PID
@@ -11,21 +13,29 @@ from pid import PID
 positionPid = PID(p=1,i=1,d=1,t=30)
 angelPid = PID(p=1,i=1,d=1,t=0)
 '''
-def tick(timer):
-    global flag
+def tick1(timer):
+    global cnt,flag,sumDeriSpeed,transmit
+    #transmit="x"+str(sumDeriSpeed//cnt)+"o"
     flag=1
+    cnt=1
+    sumDeriSpeed=0
+def tick2(timer):
+    global cnt,sumDeriSpeed,deriSpeed
+    sumDeriSpeed+=deriSpeed
+    cnt+=1
 
-tim=Timer(2,freq=10)
-
-tim.callback(tick)
+tim1=Timer(4,freq=17)
+tim1.callback(tick1)
+tim2=Timer(2,freq=170)
+tim2.callback(tick2)
 positionError=positionErrorLast=positionErrorBefore=0
-positionKp=1
+positionKp=60
 positionKi=1
-positionKd=0
+positionKd=1
 angelError=angelErrorLast=angelErrorBefore=0
-angelKp=1
+angelKp=60
 angelKi=1
-angelKd=0
+angelKd=1
 def positionPid(present):
     global positionError,positionErrorLast,positionErrorBefore,positionKp,positionKi,positionKd
     positionError=40-present
@@ -43,19 +53,20 @@ def angelPid(present):
     return output
 deriSpeed=0
 sensor.reset()
-sensor.set_vflip(False)
-sensor.set_hmirror(False)
+sensor.set_vflip(True)
+sensor.set_hmirror(True)
 sensor.set_pixformat(sensor.RGB565)
-sensor.set_framesize(sensor.QVGA) # 80x60 (4,800 pixels) - O(N^2) max = 2,3040,000.
+sensor.set_framesize(sensor.QQQVGA) # 80x60 (4,800 pixels) - O(N^2) max = 2,3040,000.
 #sensor.set_windowing([0,20,80,40])
 sensor.skip_frames(time = 2000)     # WARNING: If you use QQVGA it may take seconds
-clock = time.clock()                # to process a frame sometimes.
+clock = time.clock()# to process a frame sometimes.
+LED(1).on
 while(True):
     clock.tick()
 
-    img = sensor.snapshot()#.binary([greyThre])
+    img = sensor.snapshot().binary([THRESHOLD])
 
-    #img.invert()
+    img.invert()
     '''
     lines=img.find_lines()
 
@@ -95,14 +106,19 @@ while(True):
            position=(mid_x1+mid_x2)//2
            angelMeas=mid_x1-mid_x2
            deriSpeed=positionPid(position)+angelPid(angelMeas)
+
            #print(position,angelMeas)
            #print(positionError,angelError)
           # print(deriSpeed)
-           transmit="x"+str(deriSpeed)+"o"
+
            if flag==1:
+               transmit="x"+str(sumDeriSpeed//cnt)+"o"
                uart.write(transmit)
                flag=0
-               print(transmit)
+               LED(2).toggle()
+               #print(sumDeriSpeed,deriSpeed,cnt)
+               #print(transmit)
+
 
 
 
