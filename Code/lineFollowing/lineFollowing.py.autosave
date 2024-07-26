@@ -43,6 +43,7 @@ positionKi=2
 positionKd=1
 angelError=angelErrorLast=angelErrorBefore=0
 angelKp=80
+
 angelKi=2
 angelKd=1
 def positionPid(present):

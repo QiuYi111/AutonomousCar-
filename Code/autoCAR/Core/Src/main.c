@@ -61,7 +61,7 @@ float currentLeft=0,currentRight=0;
 extern int pulseLeft,pulseRight;
 extern int ultraLoop;
 extern uint8_t cRt[256];
-float craw_state=0;
+float craw_state=0,is_crawed=0,is_put=0;
 int mode=0;/* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -158,6 +158,20 @@ int main(void)
   {
 	  setLeftPWM(pulseLeft,TIM_CHANNEL_3);
 	  setRightPWM(pulseRight,TIM_CHANNEL_4);
+	  if(craw_state==1){
+		  is_crawed=craw_up_trail(1);//if_crow==1时，调用循迹时的程序；if_crow==2时，调用避障时的程序
+	  }
+	  else if(craw_state==2){
+		  //if_crow==1时，调用循迹时的程序；if_crow==2时，调用避障时的程序
+		  is_put=put_down_trail(1);
+	  }
+
+	  if (is_crawed==1){
+		  setSpin(20, 'F');
+
+	  }else if (is_put==1){
+		  is_put=0;
+	  }
 	  /*
 	  turning_theta_Servo1=Servo1_craw(turning_theta_Servo1);
 	  turning_theta_Servo2=Servo2_driving(turning_theta_Servo2);

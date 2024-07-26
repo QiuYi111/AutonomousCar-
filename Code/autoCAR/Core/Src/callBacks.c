@@ -20,7 +20,7 @@ extern int pulseLeft,pulseRight,mode;
 float kp=1,ki=0.5,kd=1.5; int pulseLeft=0;int pulseRight=0;
 float leftError=0,rightError=0; float error_last_left = 0,error_before_left= 0;float error_last_right = 0,error_before_right = 0;
 uint8_t cRt[512]={};
-int delayer=0;
+int delayer=0;extern float is_crawed;
 float currentRpm_left=0;
 float currentRpm_right=0;int ultraLoop=0;
 extern float craw_state;
@@ -35,6 +35,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 			 	 rpmLeft=rpmRight=0;
 			 	 preScaller=0;
 			 	 spin=0;
+			 	if (is_crawed==1){
+			 		setDirection('w');
+			 	    centralSpeed = 55;
+			 	    rpmLeft=rpmRight=centralSpeed;
+			 		mode=1;
+			 	}
 			 }else{preScaller++;}
 		 }
 
@@ -170,8 +176,19 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//éœ€è
 		        break;
 		    case 'A':
 		    	setSpin((int)uint8_to_float(rxDataBT+1,0), 'A');
+		    	break;
 		    case 'D':
 		    	setSpin((int)uint8_to_float(rxDataBT+1,0), 'D');
+		    	break;
+		    case 'F':
+		    	setSpin((int)uint8_to_float(rxDataBT+1,0), 'F');
+		    	break;
+		    case 'S':
+		    	setSpin((int)uint8_to_float(rxDataBT+1,0), 'S');
+		    	break;
+		    case 'k':
+		    	mode=-1;
+		    	break;
 		    default:
 		        // Handle unexpected cases
 		        break;
@@ -217,6 +234,44 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//éœ€è
 		leftError=0;rightError=0;error_last_left = 0;error_before_left= 0;error_last_right = 0;error_before_right = 0;
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxDataBT, sizeof rxDataBT);
 	}else if (huart==&huart4){
+		if (mode==-1){
+			switch (rxDataOp[0]) {
+			   case 'S':
+				   setDirection('a');
+				   rpmLeft = 20;
+				   rpmRight = 20;
+				  // memset(rxDataOp,0,sizeof rxDataOp);
+				   break;
+			   case 'x':
+				   rpmLeft=0;
+				   rpmRight=0;
+				   //memset(rxDataOp,0,sizeof rxDataOp);
+				   break;
+			   case 'y':
+				   craw_state=1;
+				   mode=1;
+				   break;
+			   case 'w':
+				   if (currentRpm_left==0&&currentRpm_right==0){
+				   setDirection('w');
+				   rpmLeft = 20;
+				   rpmRight = 20;}
+				   break;
+			   case 's':
+				   if (currentRpm_left==0&&currentRpm_right==0){
+					   setDirection('s');
+					   rpmLeft = 20;
+					   rpmRight = 20;}
+				   break;
+			   default:
+				   break;
+			}
+			uint8_t mess[1]={};
+			mess[0]=rxDataOp[0];
+			HAL_UART_Transmit_DMA(&huart5, mess, 1);
+			memset(rxDataOp,0,sizeof rxDataOp);
+			}
+
 		if (mode==1&&(currentRpm_left>=10||currentRpm_right>=10)){
 		int i=0;
 		for(;i < sizeof rxDataOp;i++){
@@ -242,8 +297,9 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){//éœ€è
 			rpmRight=250;
 		}else if (rpmRight<0){
 			rpmRight=0;
-		}}
+		}
 		memset(rxDataOp,0,sizeof rxDataOp);
+		}
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart4, rxDataOp, sizeof rxDataOp);
 	}
 

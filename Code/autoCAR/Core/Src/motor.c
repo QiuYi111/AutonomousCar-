@@ -146,8 +146,14 @@ void setSpin(int angel,char dir){
 	}else if (dir=='D'){
 		spin=1;
 		setDirection('d');
+	}else if(dir=='F'){
+		spin=1;
+		setDirection('w');
+	}else if(dir=='S'){
+		spin=1;
+		setDirection('s');
 	}
-	rpmLeft=rpmRight=50;
-	dt=0.0141*angel;
+	rpmLeft=rpmRight=55;
+	dt=angel;
 
 }
