@@ -9,4 +9,4 @@
 ../Core/Src/servo.c:151:7:Servo3_driving	1
 ../Core/Src/servo.c:157:7:Servo3_puting	1
 ../Core/Src/servo.c:163:7:craw_up_trail	2
-../Core/Src/servo.c:178:7:put_down_trail	2
+../Core/Src/servo.c:179:7:put_down_trail	2

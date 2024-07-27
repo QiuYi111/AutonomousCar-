@@ -164,9 +164,10 @@ float craw_up_trail(int if_crow){
 	if(if_crow==1){
 
 		float turning_theta_crow_1_S2=Servo2_initial_data;
-		turning_theta_crow_1_S2=Servo_turn(2,60,25);
 		float turning_theta_crow_1_S1=Servo1_initial_data;
 		turning_theta_crow_1_S1=Servo1_put(turning_theta_crow_1_S1);
+		turning_theta_crow_1_S2=Servo_turn(2,60,25);
+
 		turning_theta_crow_1_S2=Servo2_puting(turning_theta_crow_1_S2);
 		turning_theta_crow_1_S1=Servo1_craw(turning_theta_crow_1_S1);
 		turning_theta_crow_1_S2=Servo2_driving(turning_theta_crow_1_S2);
