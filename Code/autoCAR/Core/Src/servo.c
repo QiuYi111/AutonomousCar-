@@ -16,6 +16,7 @@ uint32_t Servo2_Channel = TIM_CHANNEL_1;
 TIM_HandleTypeDef *Servo3=&htim1;
 uint32_t Servo3_Channel = TIM_CHANNEL_3;
 //下面是各个电机转动的总函数
+extern int craw_state;
 float Servo_turn(int servo_number,float turning_theta,float turning_theta_0){
 	float turning_time = 0;
 	float turning_t=0;
@@ -44,20 +45,20 @@ float Servo_turn(int servo_number,float turning_theta,float turning_theta_0){
 	int delay_time=0;
 	delay_time=(int)p;
 if(servo_number==1){
-	for(float i=0;i<turning_time2;i+=turning_time2/100){
+	for(float i=0;i<turning_time2;i+=turning_time2/15){
 		__HAL_TIM_SET_COMPARE(Servo1,Servo1_Channel,(uint32_t)(turning_t));
 		HAL_Delay(delay_time);
 	}
 
 }
 else if(servo_number==2){
-	for(float i=0;i<turning_time2;i+=turning_time2/100){
+	for(float i=0;i<turning_time2;i+=turning_time2/15){
 			__HAL_TIM_SET_COMPARE(Servo2,Servo2_Channel,(uint32_t)(turning_t));
 	HAL_Delay(delay_time);
 		}
 }
 else if(servo_number==3){
-	for(float i=0;i<turning_time2;i+=turning_time2/100){
+	for(float i=0;i<turning_time2;i+=turning_time2/15){
 			__HAL_TIM_SET_COMPARE(Servo3,Servo3_Channel,(uint32_t)(turning_t));
 	HAL_Delay(delay_time);
 		}
@@ -73,20 +74,20 @@ else{
 			int delay_time=0;
 			delay_time=(int)p;
 	if(servo_number==1){
-		for(float i=0;i>turning_time2;i+=turning_time2/100){
+		for(float i=0;i>turning_time2;i+=turning_time2/15){
 			__HAL_TIM_SET_COMPARE(Servo1,Servo1_Channel,(uint32_t)(i+turning_t1));
 			HAL_Delay(delay_time);
 		}
 
 	}
 	else if(servo_number==2){
-		for(float i=0;i>turning_time2;i+=turning_time2/100){
+		for(float i=0;i>turning_time2;i+=turning_time2/15){
 				__HAL_TIM_SET_COMPARE(Servo2,Servo2_Channel,(uint32_t)(i+turning_t1));
 			HAL_Delay(delay_time);
 			}
 	}
 	else if(servo_number==3){
-		for(float i=0;i>turning_time2;i+=turning_time2/100){
+		for(float i=0;i>turning_time2;i+=turning_time2/15){
 				__HAL_TIM_SET_COMPARE(Servo3,Servo3_Channel,(uint32_t)(i+turning_t1));
 				HAL_Delay(delay_time);
 		}
@@ -169,6 +170,7 @@ float craw_up_trail(int if_crow){
 		turning_theta_crow_1_S2=Servo2_puting(turning_theta_crow_1_S2);
 		turning_theta_crow_1_S1=Servo1_craw(turning_theta_crow_1_S1);
 		turning_theta_crow_1_S2=Servo2_driving(turning_theta_crow_1_S2);
+		craw_state=0;
 		return 1;
 	}
 	else return 0;
@@ -184,6 +186,7 @@ float put_down_trail(int if_put){
 			turning_theta_crow_1_S2=Servo_turn(2,60,turning_theta_crow_1_S2);
 			turning_theta_crow_1_S1=Servo1_craw(turning_theta_crow_1_S1);
 			turning_theta_crow_1_S2=Servo2_driving(turning_theta_crow_1_S2);
+			craw_state=0;
 			return 1;
 		}
 		else return 0;

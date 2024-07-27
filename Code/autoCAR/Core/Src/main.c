@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "dma.h"
+#include "iwdg.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -59,10 +60,10 @@ int countnum_rightcircuance=0;
 int countnum_leftcircuance=0;
 float currentLeft=0,currentRight=0;
 extern int pulseLeft,pulseRight;
-extern int ultraLoop;
+extern int ultraLoop;int mode=0;
 extern uint8_t cRt[256];
-float craw_state=0;
-int mode=0;/* USER CODE END PV */
+float craw_state=0,is_crawed=0,is_put=0;
+/* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -117,12 +118,13 @@ int main(void)
   MX_TIM6_Init();
   MX_TIM10_Init();
   MX_TIM12_Init();
+  //MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
-  	/*HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_ALL);//�????????????????启电机PWM，最�????????????????255
-  	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_ALL);//�????????????????启舵机PWM，最�????????????????1999
-  	HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);//左轮编码�????????????????
-  	HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);//右轮编码�????????????????
-  	HAL_TIM_Base_Start_IT(&htim7);//中断定时器，50ms�????????????????次中�????????????????*/
+  	/*HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_ALL);//�?????????????????启电机PWM，最�?????????????????255
+  	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_ALL);//�?????????????????启舵机PWM，最�?????????????????1999
+  	HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);//左轮编码�?????????????????
+  	HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);//右轮编码�?????????????????
+  	HAL_TIM_Base_Start_IT(&htim7);//中断定时器，50ms�?????????????????次中�?????????????????*/
 
 
   //turning_theta_Servo2=Servo2_init(turning_theta_Servo2);
@@ -150,6 +152,8 @@ int main(void)
    //put_down_trail(1);
   HAL_UARTEx_ReceiveToIdle_DMA(&huart5, rxDataBT, sizeof rxDataBT);
   HAL_UARTEx_ReceiveToIdle_DMA(&huart4, rxDataOp, sizeof rxDataOp);
+  //Servo_turn(2,60,25);
+  //Servo_turn(1,120,25);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -158,6 +162,24 @@ int main(void)
   {
 	  setLeftPWM(pulseLeft,TIM_CHANNEL_3);
 	  setRightPWM(pulseRight,TIM_CHANNEL_4);
+	  if(craw_state==1){
+		  is_crawed=craw_up_trail(1);//if_crow==1时，调用循迹时的程序；if_crow==2时，调用避障时的程序
+	  }
+	  else if(craw_state==2){
+		  //if_crow==1时，调用循迹时的程序；if_crow==2时，调用避障时的程序
+		  is_put=put_down_trail(1);
+	  }
+
+	  if (is_crawed==1){
+		  //setSpin(20, 'F');
+		  centralSpeed = 70;
+		  rpmLeft=rpmRight=centralSpeed;
+		  mode=1;
+		  is_crawed=0;
+
+	  }else if (is_put==1){
+		  is_put=0;
+	  }
 	  /*
 	  turning_theta_Servo1=Servo1_craw(turning_theta_Servo1);
 	  turning_theta_Servo2=Servo2_driving(turning_theta_Servo2);
@@ -197,9 +219,10 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 8;
