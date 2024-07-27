@@ -11,8 +11,8 @@ sumDeriSpeed=0
 flag=0
 flag_x=0
 mode=0
-xThre=[45,55]
-yThre=[35,45]
+xThre=[80,130]
+yThre=[71,84]
 transmit="S"
 
 '''
@@ -38,11 +38,11 @@ tim1.callback(tick1)
 tim2=Timer(2,freq=800)
 tim2.callback(tick2)
 positionError=positionErrorLast=positionErrorBefore=0
-positionKp=27
+positionKp=29
 positionKi=0.28
 positionKd=0
 angelError=angelErrorLast=angelErrorBefore=0
-angelKp=27
+angelKp=29
 angelKi=0.28
 angelKd=0
 def positionPid(present):
@@ -73,7 +73,7 @@ sensor.reset()
 sensor.set_vflip(True)
 sensor.set_hmirror(False)
 sensor.set_pixformat(sensor.RGB565)
-sensor.set_framesize(sensor.QQQVGA) # 80x60 (4,800 pixels) - O(N^2) max = 2,3040,000.
+sensor.set_framesize(sensor.QQVGA) # 80x60 (4,800 pixels) - O(N^2) max = 2,3040,000.
 #sensor.set_windowing([0,20,80,40])
 sensor.skip_frames(time = 2000)     # WARNING: If you use QQVGA it may take seconds
 clock = time.clock()# to process a frame sometimes.
@@ -92,6 +92,7 @@ while(True):
             max_blob = find_max(blobs)
             img.draw_rectangle(max_blob.rect())#框选最大色块
             img.draw_cross(max_blob.cx(), max_blob.cy())#在最大色块中心画十字
+            print(max_blob.cx(), max_blob.cy())
             if max_blob.cx()>xThre[0] and max_blob.cx()<xThre[1]:
                 transmit="x"
             if xFound==1:
@@ -171,9 +172,9 @@ while(True):
                x1, y1, x2, y2 = line1.line()
                x3, y3, x4, y4 = line2.line()
 
-               mid_x1 = (x1 + x3) // 2-13
+               mid_x1 = (x1 + x3) // 2-30
                mid_y1 = (y1 + y3) // 2
-               mid_x2 = (x2 + x4) // 2-13
+               mid_x2 = (x2 + x4) // 2-30
                mid_y2 = (y2 + y4) // 2
                img.draw_line(line1.line(), color = 10)
                img.draw_line(line2.line(), color = 10)

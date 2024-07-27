@@ -172,7 +172,7 @@ int main(void)
 
 	  if (is_crawed==1){
 		  //setSpin(20, 'F');
-		  centralSpeed = 70;
+		  centralSpeed = 60;
 		  rpmLeft=rpmRight=centralSpeed;
 		  mode=1;
 		  is_crawed=0;
