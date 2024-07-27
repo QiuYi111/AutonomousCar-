@@ -1,11 +1,20 @@
-THRESHOLD = (41, 100, -128, 127, -128, 127)
+binTHRESHOLD = (41, 100, -128, 127, -128, 127)
+orangeTHRESHOLD=(26, 74, -6, 55, 17, 54)
 greyThre=(122, 255)# Grayscale threshold for dark things...
 import sensor, image, time
 from pyb import UART,Timer,LED
+#可抓取坐标是（52，43）
 uart = UART(3, 19200)
 cnt=0
+xFound=0
 sumDeriSpeed=0
 flag=0
+flag_x=0
+mode=0
+xThre=[45,55]
+yThre=[35,45]
+transmit="S"
+
 '''
 from pid import PID
 
@@ -20,22 +29,22 @@ def tick1(timer):
     cnt=1
     sumDeriSpeed=0
 def tick2(timer):
-    global cnt,sumDeriSpeed,deriSpeed
+    global cnt,sumDeriSpeed,deriSpeed,flag_x
+    flag_x=1
     sumDeriSpeed+=deriSpeed
     cnt+=1
-
-tim1=Timer(4,freq=17)
+tim1=Timer(4,freq=340)
 tim1.callback(tick1)
-tim2=Timer(2,freq=170)
+tim2=Timer(2,freq=800)
 tim2.callback(tick2)
 positionError=positionErrorLast=positionErrorBefore=0
-positionKp=53.5
-positionKi=1.75
-positionKd=1
+positionKp=27
+positionKi=0.28
+positionKd=0
 angelError=angelErrorLast=angelErrorBefore=0
-angelKp=53.5
-angelKi=1.75
-angelKd=1
+angelKp=27
+angelKi=0.28
+angelKd=0
 def positionPid(present):
     global positionError,positionErrorLast,positionErrorBefore,positionKp,positionKi,positionKd
     positionError=40-present
@@ -51,6 +60,14 @@ def angelPid(present):
     angelErrorBefore=angelErrorLast
     angelErrorLast=angelError
     return output
+
+def find_max(blobs):
+                max_size = 0
+                for blob in blobs:
+                    if blob.pixels() > max_size:
+                        max_blob = blob
+                        max_size = blob.pixels()
+                return max_blob #寻找最大色块并返回最大色块的坐标
 deriSpeed=0
 sensor.reset()
 sensor.set_vflip(True)
@@ -60,68 +77,128 @@ sensor.set_framesize(sensor.QQQVGA) # 80x60 (4,800 pixels) - O(N^2) max = 2,3040
 #sensor.set_windowing([0,20,80,40])
 sensor.skip_frames(time = 2000)     # WARNING: If you use QQVGA it may take seconds
 clock = time.clock()# to process a frame sometimes.
-LED(1).on
+mode=0
+LED(2).on()
+LED(3).on()
 while(True):
     clock.tick()
+    img = sensor.snapshot().lens_corr(strength=1.8, zoom = 1.0)
+    if mode==0:
+        blobs=img.find_blobs([orangeTHRESHOLD])
+        transmit="S"
+        #isFind=0
+        if blobs:
+            #isFind=1
+            max_blob = find_max(blobs)
+            img.draw_rectangle(max_blob.rect())#框选最大色块
+            img.draw_cross(max_blob.cx(), max_blob.cy())#在最大色块中心画十字
+            if max_blob.cx()>xThre[0] and max_blob.cx()<xThre[1]:
+                transmit="x"
+            if xFound==1:
+                if max_blob.cy()<yThre[0]:
+                    transmit="w"
+                elif max_blob.cy()>yThre[1]:
+                    transmit="s"
+                elif max_blob.cy()<yThre[1] and max_blob.cy()>yThre[0]:
+                    transmit="y"
 
-    img = sensor.snapshot().binary([THRESHOLD]).lens_corr(strength = 1.8, zoom = 1.0)
+        if flag_x==1:
+            uart.write(transmit)
+            if transmit=="x":
+                xFound=1
+            flag_x=0
+        if transmit=="y":
+            mode=1
+            LED(3).off()
 
-    img.invert()
-    '''
-    lines=img.find_lines()
-
-    if len(lines)>=2:
-        line1,line2=find_two_mainLines(lines)
-        if line1.magnitude()>8 and line2.magnitude()>8:
-            img.draw_line(line1.line(), color = 10)
-            img.draw_line(line2.line(), color = 127)
-            x1, y1, x2, y2 = line1.line()
-            x3, y3, x4, y4 = line2.line()
-
-            mid_x1 = (x1 + x3) // 2
-            mid_y1 = (y1 + y3) // 2
-            mid_x2 = (x2 + x4) // 2
-            mid_y2 = (y2 + y4) // 2
-            img.draw_line((mid_x1, mid_y1, mid_x2, mid_y2), color=127)
-
-
-    line1 = img.get_regression([(100,100)], robust = True)
-    line2=img.get_regression([(100,100)], robust = True)
+            '''
+            if isLookingY==1 and max_blob.cy()<yThre[0]:
+                transmit="w"
+            elif isLookingY==1 and max_blob.cy()>yThre[1]:
+                transmit="s"
+            elif isLookingY==1 and max_blob.cy()<yThre[1] and max_blob.cy()>yThre[0]:
+                transmit="x"
+            '''
+            '''
+            if isFind<10:
+                transmit="x"
+            if isFind==10:
+                if max_blob.cx()>xThre[0] and max_blob.cx()<xThre[1] and max_blob.cy()>yThre[0] and max_blob.cy()<yThre[1]:
+                    transmit="cool"
+                    mode=1
+                elif  max_blob.cx()>xThre[0] and max_blob.cx()<xThre[1] and max_blob.cy()<yThre[0]:
+                    transmit="w"
+                elif max_blob.cx()>xThre[0] and max_blob.cx()<xThre[1] and max_blob.cy()>yThre[1]:
+                    transmit="s"
+                elif max_blob.cx()<xThre[0] :
+                    transmit="a"
+                elif max_blob.cx()>xThre[1]:
+                    transmit="d"
 '''
-    line1 = img.get_regression([(100, 100)], roi=(0, img.height()//2, img.width() // 2, img.height()), robust=True)
-    line2 = img.get_regression([(100, 100)], roi=(img.width() // 2, img.height()//2, img.width() // 2, img.height()), robust=True)
 
-    if line1 and line2 and line1.magnitude() > 8 and line2.magnitude() > 8:
-           # 计算两条线的中点
-           x1, y1, x2, y2 = line1.line()
-           x3, y3, x4, y4 = line2.line()
 
-           mid_x1 = (x1 + x3) // 2
-           mid_y1 = (y1 + y3) // 2
-           mid_x2 = (x2 + x4) // 2
-           mid_y2 = (y2 + y4) // 2
-           img.draw_line(line1.line(), color = 10)
-           img.draw_line(line2.line(), color = 10)
-           img.draw_line((mid_x1, mid_y1, mid_x2, mid_y2), color=127)
-           position=(mid_x1+mid_x2)//2
-           angelMeas=mid_x1-mid_x2
-           deriSpeed=positionPid(position)+angelPid(angelMeas)
 
-           #print(position,angelMeas)
-           #print(positionError,angelError)
-          # print(deriSpeed)
+            #LED(3).toggle()
+    elif mode==1:
+        img.binary([binTHRESHOLD ])
+        img.invert()
+        '''
+        lines=img.find_lines()
 
-           if flag==1:
-               transmit="x"+str(sumDeriSpeed//cnt)+"o"
-               uart.write(transmit)
-               flag=0
-               LED(2).toggle()
-               #print(sumDeriSpeed,deriSpeed,cnt)
-               #print(transmit)
-    elif line1 and line1.magnitude()>8 and not line2:
-        uart.write("x30o")
-    elif line2 and line2.magnitude()>8 and not line1:
-        uart.write("x-30o")
+        if len(lines)>=2:
+            line1,line2=find_two_mainLines(lines)
+            if line1.magnitude()>8 and line2.magnitude()>8:
+                img.draw_line(line1.line(), color = 10)
+                img.draw_line(line2.line(), color = 127)
+                x1, y1, x2, y2 = line1.line()
+                x3, y3, x4, y4 = line2.line()
+
+                mid_x1 = (x1 + x3) // 2
+                mid_y1 = (y1 + y3) // 2
+                mid_x2 = (x2 + x4) // 2
+                mid_y2 = (y2 + y4) // 2
+                img.draw_line((mid_x1, mid_y1, mid_x2, mid_y2), color=127)
+
+
+        line1 = img.get_regression([(100,100)], robust = True)
+        line2=img.get_regression([(100,100)], robust = True)
+    '''
+        line1 = img.get_regression([(100, 100)], roi=(0, img.height()//2, img.width() // 2, img.height()), robust=True)
+        line2 = img.get_regression([(100, 100)], roi=(img.width() // 2, img.height()//2, img.width() // 2, img.height()), robust=True)
+
+        if line1 and line2 and line1.magnitude() > 8 and line2.magnitude() > 8:
+               # 计算两条线的中点
+               x1, y1, x2, y2 = line1.line()
+               x3, y3, x4, y4 = line2.line()
+
+               mid_x1 = (x1 + x3) // 2-13
+               mid_y1 = (y1 + y3) // 2
+               mid_x2 = (x2 + x4) // 2-13
+               mid_y2 = (y2 + y4) // 2
+               img.draw_line(line1.line(), color = 10)
+               img.draw_line(line2.line(), color = 10)
+               img.draw_line((mid_x1, mid_y1, mid_x2, mid_y2), color=127)
+               position=(mid_x1+mid_x2)//2
+               angelMeas=mid_x1-mid_x2
+               deriSpeed=positionPid(position)+angelPid(angelMeas)
+               print(mid_x1,mid_x2)
+               #print(position,angelMeas)
+               #print(positionError,angelError)
+              # print(deriSpeed)
+
+               if flag==1:
+                   transmit="x"+str(sumDeriSpeed//cnt)+"o"
+                   uart.write(transmit)
+                   flag=0
+                   LED(2).toggle()
+                   #print(sumDeriSpeed,deriSpeed,cnt)
+                   #print(transmit)
+        elif line1 and line1.magnitude()>8 and not line2:
+            uart.write("x40o")
+        elif line2 and line2.magnitude()>8 and not line1:
+            uart.write("x-40o")
+
+
 
 
 

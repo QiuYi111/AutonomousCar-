@@ -18,11 +18,11 @@
 #define waiting_time_servo_max 1000;
 //下面进行Servo1转动角度的定义(夹爪）
 #define Servo1_initial_data 15;
-#define Servo1_craw_theta 10;
+#define Servo1_craw_theta 5;
 #define Servo1_put_down_theta 60;
 //下面进行Servo2转动角度的定义（大舵机-夹爪抬起角度）
 #define Servo2_initial_data 30;
-#define Servo2_driving_theta 30;
+#define Servo2_driving_theta 25;
 #define Servo2_puting_theta 130;
 //下面进行Servo3转动角度的定义（openMV）
 #define Servo3_initial_data 0;
