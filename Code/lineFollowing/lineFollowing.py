@@ -33,18 +33,18 @@ def tick2(timer):
     flag_x=1
     sumDeriSpeed+=deriSpeed
     cnt+=1
-tim1=Timer(4,freq=50)
+tim1=Timer(4,freq=100)
 tim1.callback(tick1)
-tim2=Timer(2,freq=500)
+tim2=Timer(2,freq=1000)
 tim2.callback(tick2)
 positionError=positionErrorLast=positionErrorBefore=0
-positionKp=80
-positionKi=2
-positionKd=1
+positionKp=100
+positionKi=0
+positionKd=0
 angelError=angelErrorLast=angelErrorBefore=0
-angelKp=80
-angelKi=2
-angelKd=1
+angelKp=100
+angelKi=0
+angelKd=0
 def positionPid(present):
     global positionError,positionErrorLast,positionErrorBefore,positionKp,positionKi,positionKd
     positionError=40-present
@@ -198,6 +198,7 @@ while(True):
             uart.write("x40o")
         elif line2 and line2.magnitude()>8 and not line1:
             uart.write("x-40o")
+
 
 
 
